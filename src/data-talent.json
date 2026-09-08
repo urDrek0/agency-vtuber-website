@@ -1,5 +1,6 @@
 [
     {
+        "id" : "talent-yansa",
         "nama": "Yansan",
         "discord": "@yansan",
         "instagram": "https://www.instagram.com/yansan_in/",
@@ -15,6 +16,7 @@
         "desc": "Yansan adalah alien dari planet Ka-Q, sebuah dunia maju dengan masyarakat yang kaku dan membosankan. Berbeda dari kaumnya, ia ceria, spontan, ramah, dan sangat membenci aturan serta rutinitas. <br><br>Demi kebebasan, ia kabur ke Bumi menggunakan pesawat sederhana, tetapi karena kecerobohannya, ia mendarat di sebuah lahan kosong di Bekasi. Setibanya di Bumi, Yansan langsung ditangkap oleh BPBA (Badan Pengawas Benda Asing) yang telah melacak kedatangannya. Ia menolak mengungkap nama aslinya karena ingin meninggalkan kehidupan lamanya dan memulai hidup baru. <br><br>Setelah menyadari bahwa Yansan tidak berbahaya, BPBA memberinya codename Yansan dan identitas sipil Yayan Santoso, seorang freelance illustrator, meski tetap berada di bawah pengawasan mereka.<br><br>Sebagai illustrator, Yansan akhirnya bisa menjalani kehidupan bebas dan ekspresif yang sesuai dengan kepribadiannya, menjadikan Bumi sebagai tempat untuk berekspresi, bersosialisasi, dan menikmati hidup."
     },
     {
+        "id" : "talent-arvy",
         "nama": "Arvy",
         "discord": "@arvy.vt",
         "instagram": "https://www.instagram.com/arvy.matt/",
@@ -31,6 +33,7 @@
         "desc": "Arvy adalah seorang remaja yang lets say street smart that likes rap music and playing video games. dia hidup di kota sebagai mahasiswa yang lagi majoring computer science so he might be able to teach little bit of codes and CTF. Also arvy adalah orang yang suka membantu orang lain untuk belajar."
     },
     {
+        "id" : "talent-megitsune",
         "nama": "Megitsune",
         "discord": "@unknown-user",
         "instagram": "https://www.instagram.com/megitsune_crimson?igsh=Z2l5MHl3YmpsMTJ2",
@@ -47,6 +50,7 @@
         "desc": ""
     },
     {
+        "id" : "talent-rizu",
         "nama": "Rizu Shirakaze",
         "discord": "@Rizu Shirakaze",
         "instagram": "https://www.instagram.com/rizushirakaze?igsh=d2Y3anJ4N3pkcnox&utm_source=qr",
@@ -63,6 +67,7 @@
         "desc": ""
     },
     {
+        "id" : "talent-kira",
         "nama": "Kira Hikari",
         "discord": "@Kira Hikari",
         "instagram": "https://www.instagram.com/kira.hikarii/",
