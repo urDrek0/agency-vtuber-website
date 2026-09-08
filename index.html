@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/output.css">
     <link rel="stylesheet" href="./src/style.css">
-    <link rel="script" href="./src/main.js"></script>
     <title>Prototype Website</title>
 </head>
 <body>
@@ -26,12 +25,11 @@
     </nav>
     <main class="">
         <div id="home" class="relative w-full h-screen overflow-hidden">
-            <img src="background/bg-home.jpg" alt="Background" class="w-full h-full object-cover">
+            <img src="asset/background/bg-flare.jpg" alt="Background" class="w-full h-full object-cover">
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#050608]/90 to-[#C13DFE]/50 text-center inset-0 flex flex-col items-center justify-center w-full h-full">
                 <a href="" target="_blank">
-                    <img src="asset/logo/hololive-production-seeklogo.png" alt="Logo" class="w-128 h-auto">
+                    <img src="asset/logo/logo-agensi.png" alt="Logo" class="w-128 h-auto shadow-lg">
                 </a>
-                <h1 class="text-4xl font-bold text-white">[PLACEHOLDER]</h1>
             </div>
         </div>       
         <div id="talent" class="p-8">
@@ -44,22 +42,25 @@
                 <button id="" class="border border-black p-3 hover:bg-indigo-950 hover:text-white duration-300" type="submit">4th Gen</button>
             </div>
             <div id="talent-show" class="flex flex-wrap justify-center gap-4 pt-4">
-                <div class="grid grid-cols-4 gap-8">
-                    <a href="talent-card.html" class="text-center font-bold" >Raora Phantera<br>ラオーラ・パンテーラ<img id="" src="asset/talent/talent-card.png" alt="Raora" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300"></a>
-                    <a href="talent-card.html" class="text-center font-bold" >Raora Phantera<br>ラオーラ・パンテーラ<img id="" src="asset/talent/talent-card.png" alt="Raora" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300"></a>
-                    <a href="talent-card.html" class="text-center font-bold" >Raora Phantera<br>ラオーラ・パンテーラ<img id="" src="asset/talent/talent-card.png" alt="Raora" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300"></a>
-                    <a href="talent-card.html" class="text-center font-bold" >Raora Phantera<br>ラオーラ・パンテーラ<img id="" src="asset/talent/talent-card.png" alt="Raora" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300"></a>
-                    <a href="talent-card.html" class="text-center font-bold" >Raora Phantera<br>ラオーラ・パンテーラ<img id="" src="asset/talent/talent-card.png" alt="Raora" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300"></a>
-                    <a href="talent-card.html" class="text-center font-bold" >Raora Phantera<br>ラオーラ・パンテーラ<img id="" src="asset/talent/talent-card.png" alt="Raora" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300"></a>
-                    <a href="talent-card.html" class="text-center font-bold" >Raora Phantera<br>ラオーラ・パンテーラ<img id="" src="asset/talent/talent-card.png" alt="Raora" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300"></a>
+                <div class="grid grid-cols-5 gap-8">
+                    <button onclick="talentShow()" class="text-center font-bold">Yansan<img src="asset/talent-card/yansan-card.png" alt="yansan" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[4deg] hover:scale-105 transition-transform duration-300"></button>
+                    <button onclick="talentShow()" class="text-center font-bold">Arvy<img src="asset/talent-card/arvy-card.png" alt="arvy" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[4deg] hover:scale-105 transition-transform duration-300"></button>
+                    <button onclick="talentShow()" class="text-center font-bold">Megitsune<img src="asset/talent-card/megitsune-card.png" alt="megitsune" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[4deg] hover:scale-105 transition-transform duration-300"></button>
+                    <button onclick="talentShow()" class="text-center font-bold">Rizu Shirakaze<img src="asset/talent-card/rizu-card.png" alt="rizu" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[4deg] hover:scale-105 transition-transform duration-300"></button>
+                    <button onclick="talentShow()" class="text-center font-bold">Kira Hikari<img src="asset/talent-card/kira-card.png" alt="kira" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[4deg] hover:scale-105 transition-transform duration-300"></button>
                 </div>
             </div>
         </div>
-        <section id="about" class="relative h-screen bg-fixed" style="background-image: url('background/bg-home.jpg');">
+        <section id="about" class="relative h-screen bg-fixed object-cover" style="background-image: url('asset/background/bg-flare.jpg'); overflow: hidden;">
             <div id="" class="">
                 <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#050608]/90 to-[#C13DFE]/50 text-center inset-0 flex flex-col items-center justify-center w-full h-full">
                     <h1 class="text-3xl font-bold text-center text-6xl p-8 ml-20 mr-20 w-[60%] text-white">About Us</h1>
-                    <p class="text-white text-lg p-8 ml-20 mr-20 w-[60%]">Re:Memories adalah agensi VTuber dari Indonesia yang menciptakan Virtual Character interaktif dengan berfokus pada pengembangan bakat dan keunikan talent untuk meraih mimpi bersama-sama dengan komunitas Re:Memories.<br><br>Tim kami sudah terbentuk sejak tahun 2018 yang berfokus menciptakan IP (intellectual property) dengan harapan dapat mengembangkan industri kreatif di Indonesia.</p>
+                    <p class="text-white text-lg p-8 ml-20 mr-20 w-[60%]">
+                        "Di antara luasnya alam semesta, terdapat energi tersembunyi yang tercipta dari imajinasi, emosi, dan kehangatan jiwa manusia—energi itu disebut Aether.
+                        <br><br>"Aetheris ID lahir sebagai sebuah Sanctuary dimensi di mana para entitas dari berbagai dunia, lini masa, dan realitas berkumpul. Mereka hadir untuk membagikan kisah, bakat, dan pendar energi kebahagiaan kepada kalian semua di dunia nyata.
+                        <br><br>Bergabunglah bersama kami, dan biarkan sinarmu menyatu dalam kehangatan AetherisID!
+                        <br><br>Aetheris adalah agensi VTuber Independen yang berdedikasi untuk menghadirkan hiburan, cerita manis, dan pendar kehangatan di setiap langkah perjalanan kami. 
+                        <br><br>Di sini, para talent kami dari berbagai dunia dan dimensi berkumpul untuk membagikan keseruan, bakat, dan momen tak terlupakan bersama kalian!</p>
                 </div>
             </div>
         </section>
@@ -74,31 +75,87 @@
                     </div>
                     <div id="team-show" class="flex flex-wrap justify-center gap-4 pt-4">
                         <div class="grid grid-cols-4 gap-4">
-                            <a href="" class="font-bold text-center" target="_blank">Nanashi Mumei<br>七詩ムメイ<img id="" src="asset/talent/team-card.png" alt="Mumei" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300"></a>
-                            <a href="" class="font-bold text-center" target="_blank">Nanashi Mumei<br>七詩ムメイ<img id="" src="asset/talent/team-card.png" alt="Mumei" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300"></a>
-                            <a href="" class="font-bold text-center" target="_blank">Nanashi Mumei<br>七詩ムメイ<img id="" src="asset/talent/team-card.png" alt="Mumei" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300"></a>
-                            <a href="" class="font-bold text-center" target="_blank">Nanashi Mumei<br>七詩ムメイ<img id="" src="asset/talent/team-card.png" alt="Mumei" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300"></a>
-                            <a href="" class="font-bold text-center" target="_blank">Nanashi Mumei<br>七詩ムメイ<img id="" src="asset/talent/team-card.png" alt="Mumei" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300"></a>
-                            <a href="" class="font-bold text-center" target="_blank">Nanashi Mumei<br>七詩ムメイ<img id="" src="asset/talent/team-card.png" alt="Mumei" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300"></a>
-                            <a href="" class="font-bold text-center" target="_blank">Nanashi Mumei<br>七詩ムメイ<img id="" src="asset/talent/team-card.png" alt="Mumei" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300"></a>
+                            <button class="font-bold text-center" target="_blank">Nanashi Mumei<br>七詩ムメイ<img id="" src="asset/talent/team-card.png" alt="Mumei" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[4deg] hover:scale-105 transition-transform duration-300"></button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer id="contacts" style="background-image: url('background/bg-home.jpg');" class="relative h-screen bg-fixed">
+    <footer id="contacts" style="background-image: url('asset/background/bg-flare.jpg');" class="relative h-screen bg-fixed object-cover">
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#050608]/90 to-[#C13DFE]/50 text-center inset-0 flex flex-col items-center justify-center w-full h-full">
             <h1 id="" class="text-3xl font-bold text-center text-6xl p-8 text-white">Find Us Here!</h1>
-            <ul class="flex justify-center space-x-8 pt-4">
-                <li id = "instagram" class=""><a href="" class="" target="_blank"><img src="./asset/logo/logo-ig.png" alt="" class="w-[5vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300"></a></li>
-                <li id = "twitter" class=""><a href="" class="" target="_blank"><img src="./asset/logo/logo-twitter.png" alt="" class="w-[5vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300"></a></li>
-                <li id = "discord" class=""><a href="" class="" target="_blank"><img src="./asset/logo/logo-discord.png" alt="" class="w-[5vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300"></a></li>
-            </ul>
+            <div class="grid grid-cols-2 gap-4">
+                <a href="https://www.instagram.com/aetherisofficial" class="" target="_blank"><img src="./asset/logo/logo-ig.png" alt="instagram" class="w-[5vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[deg] hover:scale-105 transition-transform duration-300 "></a>
+                <a href="https://x.com/AetherisID" class="" target="_blank"><img src="./asset/logo/logo-twitter.png" alt="twitter" class="w-[5vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[4deg] hover:scale-105 transition-transform duration-300"></a>
+                <a href="" class="" target="_blank"><img src="./asset/logo/logo-discord.png" alt="discord" class="w-[5vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[4deg] hover:scale-105 transition-transform duration-300"></a>
+                <a href="https://www.youtube.com/@AetherisID" class="" target="_blank"><img src="asset/logo/logo-youtube.png" alt="youtube" class="w-[5vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[4deg] hover:scale-105 transition-transform duration-300"></a>
+            </div>
         </div>
     </footer>
     <div id="footer-content" class="bg-[#5D3365] text-white text-center p-4 z-50 bottom-0 w-full">
-        <p class="font-bold">Copyright © 2026 Re:Memories. All rights reserved.</p>
+        <p class="">Copyright © 2026 Aetheris ID. All rights reserved.</p>
     </div>
-</body>
+
+    <script>
+        fetch("./src/data-talent.json")
+        .then((response) => response.json())
+        .then((talents) => {
+            const talentCard = document.querySelector("#talent-show");
+
+            talentCard.innerHTML = talents
+            .map((talent) => `
+                <button onclick="talentShow()" class="text-center font-bold">${talent.nama}
+                    <img src="${talent.talent_card}" alt="${talent.nama}" 
+                    class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300">
+                    </button>
+
+            `)
+            .join("");
+        });
+
+        fetch("./src/data-talent.json")
+        .then((response) => response.json())
+        .then((talents) => {
+            const container = document.querySelector("");
+
+            container.innerHTML = talents
+            .map((talent) => `
+            <!-- Modal Pop Up -->
+            <div id="modal-container" class="bg-white">
+                <div class="modal">
+                    <main id="" class="pt-15">
+                        <div id="info-container" class="">
+                            <div id="talent-container" class="grid grid-cols-2 gap-4 items-center w-3/4 mx-auto ">
+                                <div id="talent-info" class="p-8 mix-blend-multiply">
+                                    <button id="close-talent-info" onclick="talentClose()" class=""><img src="asset/icons/close-button.png" alt="close" class="w-7 h-auto hover:scale-105"></button>
+                                    <h1 id="talent-name" class="text-2xl font-bold items-center p-4">${talent.nama}</h1>
+                                    <p id="talent-description" class="text-black text-justify p-4">${talent.desc}</p>
+                                    <h1 id="talent-stats" class="text-2xl font-bold p-4">Data</h1>
+                                        <div class="grid grid-cols-2 gap-4 justify-center items-center flex flex-wrap p-4">
+                                            <h3 class="font-bold">Fanbase</h3><p>${talent.fanbase}</p>
+                                            <h3 class="font-bold">Status</h3><p>${talent.status}</p>
+                                            <h3 class="font-bold">Mark</h3><p>${talent.oshi_mark}</p>
+                                        </div>
+                                        <div class="">
+                                            <h1 id="talent-links" class="text-2xl font-bold p-4">Connect!</h1>
+                                            <div id="" class="grid grid-cols-3 gap-2 justify-center items-center flex flex-wrap pb-4">
+                                                <a id="" href="${talent.youtube}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Youtube</a>
+                                                <a id="" href="${talent.instagram}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Instagram</a>
+                                                <a id="" href="${talent.twitter}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Twitter</a>
+                                                <a id="" href="${talent.tiktok}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Tiktok</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <img id="talent-image" src="${talent.talent_image}" alt="${talent.nama}" class="max-w-150 max-h-200 absolute ml-120">
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+            <!-- Modal Ends -->
+            `).join("");
+        });
+    </script>
+    </body>
 </html>
