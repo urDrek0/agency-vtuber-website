@@ -27,7 +27,7 @@
         <div id="home" class="relative w-full h-screen overflow-hidden">
             <img src="asset/background/bg-flare.jpg" alt="Background" class="w-full h-full object-cover">
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#050608]/90 to-[#C13DFE]/50 text-center inset-0 flex flex-col items-center justify-center w-full h-full">
-                <a href="" target="_blank">
+                <a href="#contacts">
                     <img src="asset/logo/logo-agensi.png" alt="Logo" class="w-128 h-auto">
                 </a>
             </div>
@@ -41,10 +41,13 @@
                 <button id="" class="border border-black p-3 hover:bg-indigo-950 hover:text-white duration-300" type="submit">3rd Gen</button>
                 <button id="" class="border border-black p-3 hover:bg-indigo-950 hover:text-white duration-300" type="submit">4th Gen</button>
             </div>
+            <!-- card talent -->
             <div id="talent-show" class="flex flex-wrap justify-center gap-4 pt-4">
                 <div class="grid grid-cols-5 gap-8">
                 </div>
             </div>
+            <!-- info talent -->
+            <div id="modal-info" class=""></div>
         </div>
         <section id="about" class="relative h-screen bg-fixed object-cover" style="background-image: url('asset/background/bg-flare.jpg'); overflow: hidden;">
             <div id="" class="">
@@ -107,19 +110,21 @@
             var loadData = await returnPromise()
             const talentCard = document.querySelector("#talent-show");
             talentCard.innerHTML = loadData.map((talent) =>`
-                <button id="${talent.id}" onclick="talentShow()" class="text-center font-bold">${talent.nama}
+                <button id="${talent.id}" onclick=talentShow("${talent.id}") class="">
+                    <h1 class="font-bold text-center">${talent.nama}</h1>
                     <img src="${talent.talent_card}" alt="${talent.nama}" 
-                    class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300">
+                    class="w-[15vw] h-auto p-3 saturate-80 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300">
                     </button>
             `).join("");
         }
         renderCard();
 
-        async function talentShow(){
+        async function talentShow(cardId){
             var loadData = await returnPromise()
-            idFilter.id.forEach(element => {
-                if(cardId === `${element.name}`) {
-                    cardId.innerHTML = `
+            var showedInfo = loadData.find(loadData => loadData.id === cardId)
+            console.log(showedInfo)
+            const target = document.getElementById("modal-info");
+                target.innerHTML =`
                         <!-- Modal Pop Up -->
                         <div id="modal-container" class="bg-white">
                             <div id="" class="modal">
@@ -127,26 +132,28 @@
                                     <div id="info-container" class="">
                                         <div id="talent-container" class="grid grid-cols-2 gap-4 items-center w-3/4 mx-auto ">
                                             <div id="talent-info" class="p-8 mix-blend-multiply">
-                                                <button id="close-talent-info" onclick="talentClose()" class=""><img src="asset/icons/close-button.png" alt="close" class="w-7 h-auto hover:scale-105"></button>
-                                                <h1 id="talent-name" class="text-2xl font-bold items-center p-4">${talents.nama}</h1>
-                                                <p id="talent-description" class="text-black text-justify p-4">${talents.desc}</p>
+                                                <button id="close-talent-info" onclick=talentClose() class="mr-105">
+                                                    <img src="asset/icons/close-button.png" alt="close" class="w-7 h-auto hover:scale-105 ">
+                                                </button>
+                                                <h1 id="talent-name" class="text-4xl font-bold p-4 text-left">${showedInfo.nama}</h1>
+                                                <p id="talent-description" class="text-black text-justify p-4">${showedInfo.desc}</p>
                                                 <h1 id="talent-stats" class="text-2xl font-bold p-4">Data</h1>
-                                                    <div class="grid grid-cols-2 gap-4 justify-center items-center flex flex-wrap p-4">
-                                                        <h3 class="font-bold">Fanbase</h3><p>${talents.fanbase}</p>
-                                                        <h3 class="font-bold">Status</h3><p>${talents.status}</p>
-                                                        <h3 class="font-bold">Mark</h3><p>${talents.oshi_mark}</p>
+                                                    <div class="grid grid-cols-2 gap-4 pt-4 pb-4 pl-4 text-left">
+                                                        <h3 class="font-bold">Fanbase</h3><p>${showedInfo.fanbase}</p>
+                                                        <h3 class="font-bold">Status</h3><p>${showedInfo.status}</p>
+                                                        <h3 class="font-bold">Mark</h3><p>${showedInfo.oshi_mark}</p>
                                                     </div>
                                                     <div class="">
                                                         <h1 id="talent-links" class="text-2xl font-bold p-4">Connect!</h1>
-                                                        <div id="" class="grid grid-cols-3 gap-2 justify-center items-center flex flex-wrap pb-4">
-                                                            <a id="" href="${talents.youtube}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Youtube</a>
-                                                            <a id="" href="${talents.instagram}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Instagram</a>
-                                                            <a id="" href="${talents.twitter}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Twitter</a>
-                                                            <a id="" href="${talents.tiktok}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Tiktok</a>
+                                                        <div id="" class="grid grid-cols-3 gap-2 justify-center items-center flex flex-wrap pt-4 pb-4 pl-4 font-bold">
+                                                            <a id="" href="${showedInfo.youtube}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Youtube</a>
+                                                            <a id="" href="${showedInfo.instagram}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Instagram</a>
+                                                            <a id="" href="${showedInfo.twitter}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Twitter</a>
+                                                            <a id="" href="${showedInfo.tiktok}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Tiktok</a>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            <img id="talent-image" src="${talents.talent_image}" alt="${talents.nama}" class="max-w-150 max-h-200 absolute ml-120">
+                                            <img id="talent-image" src="${showedInfo.talent_image}" alt="${showedInfo.nama}" class="max-w-150 max-h-200 absolute ml-120 place-self-start">
                                         </div>
                                     </div>
                                 </main>
@@ -154,7 +161,12 @@
                         </div>
                         <!-- Modal Ends -->
                         `
-                    }})}
+                    }
+        function talentClose(){
+            const target = document.getElementById("modal-container");
+            target.classList.add('hidden')
+        }
+        talentclose()
     </script>
     </body>
 </html>

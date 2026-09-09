@@ -44,5 +44,40 @@
         </div>
     </div>
     <!-- Modal Ends -->
+
+    <!-- Modal Pop Up -->
+                        <div id="modal-container" class="bg-white">
+                            <div id="" class="modal">
+                                <main id="" class="pt-15">
+                                    <div id="info-container" class="">
+                                        <div id="talent-container" class="grid grid-cols-2 gap-4 items-center w-3/4 mx-auto ">
+                                            <button id="close-talent-info" onclick=talentClose() class="">
+                                                <img src="asset/icons/close-button.png" alt="close" class="w-7 h-auto hover:scale-105 ">
+                                            </button>
+                                            <h1 id="talent-name" class="text-4xl font-bold p-4 text-left">${showedInfo.nama}</h1>
+                                            <p id="talent-description" class="text-black text-justify p-4">${showedInfo.desc}</p>
+                                            <h1 id="talent-stats" class="text-2xl font-bold p-4">Data</h1>
+                                                <div class="grid grid-cols-2 gap-4 pt-4 pb-4 pl-4 text-left">
+                                                    <h3 class="font-bold">Fanbase</h3><p>${showedInfo.fanbase}</p>
+                                                    <h3 class="font-bold">Status</h3><p>${showedInfo.status}</p>
+                                                    <h3 class="font-bold">Mark</h3><p>${showedInfo.oshi_mark}</p>
+                                                </div>
+                                                <div class="">
+                                                    <h1 id="talent-links" class="text-2xl font-bold p-4">Connect!</h1>
+                                                    <div id="" class="grid grid-cols-3 gap-2 justify-center items-center flex flex-wrap pt-4 pb-4 pl-4 font-bold">
+                                                        <a id="" href="${showedInfo.youtube}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Youtube</a>
+                                                        <a id="" href="${showedInfo.instagram}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Instagram</a>
+                                                        <a id="" href="${showedInfo.twitter}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Twitter</a>
+                                                        <a id="" href="${showedInfo.tiktok}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Tiktok</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <img id="talent-image" src="${showedInfo.talent_image}" alt="${showedInfo.nama}" class="max-w-150 max-h-200 absolute ml-120 place-self-start">
+                                    </div>
+                                </div>
+                            </main>
+                        </div>
+                    </div>
+                <!-- Modal Ends -->
 </body>
 </html> 

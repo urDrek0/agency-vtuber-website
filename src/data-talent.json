@@ -1,6 +1,6 @@
 [
     {
-        "id" : "talent-yansa",
+        "id" : "talentYansa",
         "nama": "Yansan",
         "discord": "@yansan",
         "instagram": "https://www.instagram.com/yansan_in/",
@@ -16,7 +16,7 @@
         "desc": "Yansan adalah alien dari planet Ka-Q, sebuah dunia maju dengan masyarakat yang kaku dan membosankan. Berbeda dari kaumnya, ia ceria, spontan, ramah, dan sangat membenci aturan serta rutinitas. <br><br>Demi kebebasan, ia kabur ke Bumi menggunakan pesawat sederhana, tetapi karena kecerobohannya, ia mendarat di sebuah lahan kosong di Bekasi. Setibanya di Bumi, Yansan langsung ditangkap oleh BPBA (Badan Pengawas Benda Asing) yang telah melacak kedatangannya. Ia menolak mengungkap nama aslinya karena ingin meninggalkan kehidupan lamanya dan memulai hidup baru. <br><br>Setelah menyadari bahwa Yansan tidak berbahaya, BPBA memberinya codename Yansan dan identitas sipil Yayan Santoso, seorang freelance illustrator, meski tetap berada di bawah pengawasan mereka.<br><br>Sebagai illustrator, Yansan akhirnya bisa menjalani kehidupan bebas dan ekspresif yang sesuai dengan kepribadiannya, menjadikan Bumi sebagai tempat untuk berekspresi, bersosialisasi, dan menikmati hidup."
     },
     {
-        "id" : "talent-arvy",
+        "id" : "talentArvy",
         "nama": "Arvy",
         "discord": "@arvy.vt",
         "instagram": "https://www.instagram.com/arvy.matt/",
@@ -30,10 +30,10 @@
         "status": "Active",
         "gen": 1,
         "quotes": "",
-        "desc": "Arvy adalah seorang remaja yang lets say street smart that likes rap music and playing video games. dia hidup di kota sebagai mahasiswa yang lagi majoring computer science so he might be able to teach little bit of codes and CTF. Also arvy adalah orang yang suka membantu orang lain untuk belajar."
+        "desc": "Arvy adalah seorang remaja yang dikenal sebagai sosok yang street-smart, cukup pandai membaca situasi, cepat beradaptasi, dan terbiasa menghadapi berbagai macam orang di lingkungan perkotaan. Ia menyukai musik rap dan video game, yang menjadi bagian dari kesehariannya. Di balik pembawaannya yang santai, Arvy sebenarnya memiliki rasa ingin tahu yang tinggi dan cukup pandai dalam memecahkan masalah dengan cara yang praktis.<br><br>Saat ini, Arvy merupakan mahasiswa yang sedang mengambil jurusan Computer Science. Ia memiliki ketertarikan pada dunia pemrograman dan keamanan siber, sehingga ia mampu memahami berbagai dasar coding dan CTF (Capture The Flag). Walaupun masih terus belajar dan bukan seorang ahli, Arvy senang mengeksplorasi hal-hal baru di bidang teknologi dan tidak takut mencoba ketika menemukan masalah yang menantang.<br><br>Salah satu sifat Arvy yang paling menonjol adalah ia suka membantu orang lain belajar. Ia senang berbagi pengetahuan, baik tentang coding, CTF, maupun hal-hal yang sudah ia pelajari dari pengalamannya sendiri. Arvy percaya bahwa belajar tidak harus selalu serius atau membosankan; menurutnya, belajar bersama, mencoba, gagal, lalu menemukan solusi sendiri adalah bagian dari proses yang membuat seseorang berkembang."
     },
     {
-        "id" : "talent-megitsune",
+        "id" : "talentMegitsune",
         "nama": "Megitsune",
         "discord": "@unknown-user",
         "instagram": "https://www.instagram.com/megitsune_crimson?igsh=Z2l5MHl3YmpsMTJ2",
@@ -50,7 +50,7 @@
         "desc": ""
     },
     {
-        "id" : "talent-rizu",
+        "id" : "talentRizu",
         "nama": "Rizu Shirakaze",
         "discord": "@Rizu Shirakaze",
         "instagram": "https://www.instagram.com/rizushirakaze?igsh=d2Y3anJ4N3pkcnox&utm_source=qr",
@@ -67,7 +67,7 @@
         "desc": ""
     },
     {
-        "id" : "talent-kira",
+        "id" : "talentKira",
         "nama": "Kira Hikari",
         "discord": "@Kira Hikari",
         "instagram": "https://www.instagram.com/kira.hikarii/",
