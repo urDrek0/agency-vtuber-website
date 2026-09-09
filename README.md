@@ -1,38 +1,32 @@
-# Development Log - Aetheris ID Website
+# Aetheris ID Website
 
-Dokumen ini berisi catatan perubahan, keputusan teknis, dan hal penting selama pengembangan website Aetheris ID.
+Website agensi VTuber Aetheris ID.
 
-## Project Overview
+## Struktur Utama
 
-- Website agensi VTuber Aetheris ID.
-- Halaman utama saat ini berada di `index.html`.
-- Data talent disimpan di `src/data-talent.json`.
-- JavaScript sementara masih berada di bagian `<script>` dalam `index.html`.
-- Styling menggunakan Tailwind CSS dan `src/style.css`.
+- `index.html`: halaman utama dan logic JavaScript sementara.
+- `src/data-talent.json`: data seluruh talent.
+- `src/style.css`: styling tambahan.
+- `src/output.css`: hasil build Tailwind CSS.
+- `DEVELOPMENT_LOG.md`: catatan teknis dan proses pengembangan yang lebih detail.
 
-## Data Talent
+## Menjalankan Project
 
-Setiap talent disimpan sebagai satu object di dalam array JSON. Property penting yang digunakan:
+Install dependency:
 
-- `id`: identitas unik talent, contoh `talent-arvy`.
-- `nama`: nama talent.
-- `talent_card`: gambar card talent.
-- `talent_image`: gambar detail talent.
-- `desc`: deskripsi talent.
-- `status`: status talent.
-- `gen`: generasi talent.
-- `fanbase`: nama fanbase.
-- `oshi_mark`: mark talent.
-- `youtube`, `instagram`, `tiktok`, `twitter`, `discord`: informasi sosial media.
+```bash
+npm install
+```
 
-Catatan:
+Jalankan Tailwind watcher:
 
-- Semua `id` harus unik.
-- Nama property JSON harus konsisten dengan property yang dipanggil JavaScript.
-- `talents` berarti seluruh array, sedangkan `talent` berarti satu object.
-- Data gambar menggunakan underscore, yaitu `talent_card` dan `talent_image`.
+```bash
+npm run dev
+```
 
-## Alur Data
+Gunakan Live Server atau development server saat membuka website agar `fetch()` dapat membaca file JSON lokal.
+
+## Alur Data Talent
 
 ```text
 fetch data-talent.json
@@ -41,68 +35,65 @@ fetch data-talent.json
 response.json()
         |
         v
-Promise berisi array talents
-        |
-        v
 await Promise
         |
         v
 array talents
         |
-        +--> map()   membuat card
-        +--> find()  mencari talent untuk popup
+        +--> map()   membuat semua card
+        +--> find()  mencari satu talent untuk modal
         +--> filter() menyaring status atau generasi
 ```
 
-File JSON cukup di-fetch sekali. Promise atau hasil array yang sama dapat digunakan kembali untuk render card, filter, dan detail popup.
+Data talent diambil sebagai JSON array. Setiap object memiliki `id` unik, informasi profil, gambar card, gambar detail, dan link sosial media.
 
-## Catatan Async JavaScript
+## Logic Card Dan Modal
 
-- `fetch()` mengembalikan Promise.
-- `response.json()` juga mengembalikan Promise.
-- Fungsi yang diberi `async` selalu mengembalikan Promise.
-- `await` mengambil nilai di dalam Promise, tetapi tidak mengubah return value fungsi `async` menjadi nilai sinkron di luar fungsi.
-- `returnPromise()` dapat mengembalikan Promise yang hasil akhirnya adalah array talent.
-- Pemakai hasil tersebut harus menunggu dengan `await` atau memakai `.then()` sebelum menjalankan `map()`, `find()`, atau `filter()`.
-- `resolve` dan `reject` manual tidak diperlukan karena `fetch()` sudah mengelola Promise-nya.
+1. Fetch data talent.
+2. Tunggu Promise sampai menjadi array.
+3. Gunakan `map()` untuk membuat semua card.
+4. Kirim `talent.id` saat card diklik.
+5. Gunakan `find()` untuk mendapatkan satu object talent berdasarkan id.
+6. Isi modal menggunakan object talent terpilih.
+7. Tombol close menyembunyikan modal tanpa menghapus card.
 
-## Rencana Fitur Talent
+Card dan modal harus berada di container yang berbeda. Card tidak boleh ditimpa oleh isi modal.
 
-1. Fetch data talent satu kali.
-2. Render semua card dari array talent menggunakan `map()`.
-3. Simpan id talent pada setiap card.
-4. Saat card diklik, ambil id card tersebut.
-5. Cari satu object talent dengan `find()` berdasarkan id.
-6. Isi satu modal popup menggunakan data talent terpilih.
-7. Tampilkan modal.
-8. Sediakan tombol close untuk menyembunyikan modal.
-9. Tambahkan filter berdasarkan `status` dan `gen`.
+## Data JSON
 
-## Change Log
+Property penting:
+
+- `id`: id unik, contoh `talent-arvy`.
+- `nama`: nama talent.
+- `talent_card`: gambar card.
+- `talent_image`: gambar detail.
+- `desc`: deskripsi.
+- `status`, `gen`, `fanbase`, `oshi_mark`: informasi profil.
+- `youtube`, `instagram`, `tiktok`, `twitter`, `discord`: link sosial media.
+
+## Changelog
+
+### 2026-09-09
+
+- Menyelesaikan alur card talent ke modal detail.
+- Menambahkan pengiriman id talent dari card ke fungsi detail.
+- Menggunakan `find()` untuk memilih satu talent berdasarkan id.
+- Menggunakan object hasil pencarian untuk menampilkan nama, deskripsi, statistik, gambar, dan link sosial media.
+- Menambahkan fungsi close untuk menyembunyikan modal.
+- Memisahkan konsep container card dan container modal agar card tetap tersedia setelah modal ditutup.
+- Merapikan dokumentasi project dan mencatat tanggal perubahan.
 
 ### 2026-09-08
 
-- Menambahkan property `id` unik pada setiap talent di `src/data-talent.json`.
-- Menyamakan nama property gambar menjadi `talent_card` dan `talent_image`.
-- Menambahkan pemahaman bahwa data JSON lokal dapat diproses dengan pola yang sama seperti response API.
-- Membuat fungsi pengambilan data secara terpisah dari fungsi render.
-- Menghubungkan `fetch()` dengan `response.json()` melalui Promise.
-- Memahami perbedaan antara Promise dan array hasil Promise.
-- Menentukan bahwa data talent sebaiknya di-fetch sekali dan digunakan kembali.
-- Menentukan rencana penggunaan `map()`, `find()`, dan `filter()` untuk fitur talent.
+- Menambahkan id unik pada setiap talent di `src/data-talent.json`.
+- Menyamakan property gambar menjadi `talent_card` dan `talent_image`.
+- Memisahkan proses fetch data dari proses render card.
+- Memahami perbedaan Promise, array hasil Promise, dan satu object talent.
+- Menetapkan penggunaan `map()`, `find()`, dan `filter()` sesuai kebutuhan masing-masing.
 
-## Known Issues
+## Catatan Pengembangan
 
-- Render card masih perlu memastikan hasil Promise sudah ditunggu sebelum `map()` dijalankan.
-- Event click card belum menerima atau membaca id talent yang diklik.
-- `talentShow()` belum terhubung dengan object talent hasil `find()`.
-- Modal popup belum memiliki satu container stabil yang diisi ulang berdasarkan talent terpilih.
-- Beberapa nama variabel lama masih perlu diseragamkan agar tidak mencampur nama seperti Promise, response, dan array.
-- Tombol filter belum memiliki logic filter.
-
-## Development Notes
-
-- Gunakan Live Server atau dev server saat membaca file JSON dengan `fetch()`.
-- Jangan melakukan fetch ulang untuk setiap card.
-- Saat debugging, cek tipe nilai dengan `console.log()` dan bedakan apakah hasilnya `Promise`, `Array`, atau satu object talent.
-- Kerjakan satu tahap alur terlebih dahulu: data selesai diambil, kemudian card dirender, lalu click card, dan terakhir popup.
+- `fetch()` dan `response.json()` menghasilkan Promise.
+- Fungsi `async` selalu mengembalikan Promise, meskipun nilai akhirnya berupa array.
+- Jalankan `map()`, `find()`, atau `filter()` setelah Promise selesai ditunggu.
+- Jangan fetch ulang setiap card diklik jika data yang sama sudah tersedia.
