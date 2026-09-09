@@ -45,7 +45,7 @@
                 </div>
             </div>
             <!-- info talent -->
-            <div id="modal-info" class=""></div>
+            <div id="modal-talent" class=""></div>
         </div>
         <section id="about" class="relative h-screen bg-fixed object-cover" style="background-image: url('asset/background/bg-flare.jpg'); overflow: hidden;">
             <div id="" class="">
@@ -69,11 +69,15 @@
                         <button id="" class="w-min-[5vw] w-max-[8vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit">Creative & Production</button>
                         <button id="" class="w-min-[5vw] w-max-[8vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit">Management</button>
                     </div>
+                    <!-- team card -->
                     <div id="team-show" class="flex flex-wrap justify-center gap-4 pt-4">
-                        <div class="grid grid-cols-4 gap-4">
-                            <button class="font-bold text-center" target="_blank">Nanashi Mumei<br>七詩ムメイ<img id="" src="asset/talent/team-card.png" alt="Mumei" class="w-[15vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[4deg] hover:scale-105 transition-transform duration-300"></button>
+                        <div class="grid grid-cols-5 gap-8">
                         </div>
                     </div>
+                    <!-- team info -->
+                     <div id="modal-team" class="" >
+
+                     </div>
                 </div>
             </div>
         </section>
@@ -95,6 +99,7 @@
 
     <script>
         "use strict";
+        // talent card and info async function
         function fetchData(){
             var dataTalentPromise = fetch("./src/data-talent.json").then((response) => response.json())
             return dataTalentPromise
@@ -120,10 +125,8 @@
         async function talentShow(cardId){
             var loadData = await returnPromise()
             var showedInfo = loadData.find(loadData => loadData.id === cardId)
-            console.log(showedInfo)
-            const target = document.getElementById("modal-info");
+            const target = document.getElementById("modal-talent");
                 target.innerHTML =`
-                        <!-- Modal Pop Up -->
                         <div id="modal-container" class="">
                             <div id="" class="modal">
                                 <main id="" class="pt-15">
@@ -157,14 +160,72 @@
                                 </main>
                             </div>
                         </div>
-                        <!-- Modal Ends -->
                         `
                     }
         function talentClose(){
             const target = document.getElementById("modal-container");
             target.classList.add('hidden')
         }
-        talentclose()
+
+        // team card and info async function
+        function fetchTeam(){
+            var dataTeamPromise = fetch("./src/data-team.json").then((response) => response.json())
+            return dataTeamPromise
+        }
+
+        async function returnTeamPromise(){
+            var response = await fetchTeam();
+            return response
+        }
+
+        async function renderTeamCard() {
+            var loadTeamData = await returnTeamPromise()
+            const teamCard = document.querySelector("#team-show");
+            teamCard.innerHTML = loadTeamData.map((team) =>`
+                <button id="${team.id}" onclick=teamShow("${team.id}") class="">
+                    <h1 class="font-bold text-center">${team.nama}</h1>
+                    <img src="${team.team_card}" alt="${team.nama}" 
+                    class="w-[15vw] h-auto p-3 saturate-80 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300">
+                </button>
+            `).join("");
+        } 
+        renderTeamCard();
+
+        async function teamShow(teamId) {
+            var loadTeamData = await returnTeamPromise()
+            var showedInfo = loadTeamData.find(loadTeamData => loadTeamData.id === teamId)
+            const target = document.getElementById("modal-team");
+            target.innerHTML = `
+                        <div id="team-modal-container" class="">
+                            <div id="" class="modal">
+                                <main id="" class="pt-15">
+                                    <div id="info-container" class="shadow-2xl border border-black border-3px rounded-xl">
+                                        <div id="team-container" class="grid grid-cols-2 gap-4 items-center w-3/4 mx-auto ">
+                                            <div id="team-info" class="p-8 mix-blend-multiply">
+                                                <button id="close-team-info" onclick=teamClose() class="mr-105">
+                                                    <img src="asset/icons/close-button.png" alt="close" class="w-7 h-auto hover:scale-105 ">
+                                                </button>
+                                                <h1 id="team-name" class="text-4xl font-bold p-4 text-left">${showedInfo.nama}</h1>
+                                                <p id="team-description" class="text-black text-justify p-4">${showedInfo.desc}</p>
+                                                <h1 id="team-stats" class="text-2xl font-bold p-4">Data</h1>
+                                                    <div class="grid grid-cols-2 gap-4 pt-4 pb-4 pl-4 text-left">
+                                                        <h3 class="font-bold">Position</h3><p class="text-justify">${showedInfo.position}</p>
+                                                        <h3 class="font-bold">Kesan</h3><p class="text-justify">${showedInfo.kesan}</p>
+                                                        <h3 class="font-bold">Pesan</h3><p class="text-justify">${showedInfo.pesan}</p>
+                                                    </div>
+                                                </div>
+                                            <img id="team-image" src="${showedInfo.team_image}" alt="${showedInfo.nama}" class="max-w-150 max-h-200 absolute ml-120 place-self-start">
+                                        </div>
+                                    </div>
+                                </main>
+                            </div>
+                        </div>
+            `
+        }
+        function teamClose(){
+            const target = document.getElementById("team-modal-container")
+            target.classList.add("hidden")
+        }
     </script>
     </body>
 </html>

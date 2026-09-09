@@ -66,17 +66,23 @@ File JSON cukup di-fetch sekali. Promise atau hasil array yang sama dapat diguna
 - Pemakai hasil tersebut harus menunggu dengan `await` atau memakai `.then()` sebelum menjalankan `map()`, `find()`, atau `filter()`.
 - `resolve` dan `reject` manual tidak diperlukan karena `fetch()` sudah mengelola Promise-nya.
 
-## Rencana Fitur Talent
+## Status Fitur Talent
 
-1. Fetch data talent satu kali.
-2. Render semua card dari array talent menggunakan `map()`.
-3. Simpan id talent pada setiap card.
-4. Saat card diklik, ambil id card tersebut.
-5. Cari satu object talent dengan `find()` berdasarkan id.
-6. Isi satu modal popup menggunakan data talent terpilih.
-7. Tampilkan modal.
-8. Sediakan tombol close untuk menyembunyikan modal.
-9. Tambahkan filter berdasarkan `status` dan `gen`.
+- [x] Fetch data talent.
+- [x] Render semua talent card dengan `map()`.
+- [x] Kirim id talent dari card ke fungsi detail.
+- [x] Cari talent terpilih dengan `find()`.
+- [x] Isi modal berdasarkan object talent terpilih.
+- [x] Tampilkan dan tutup modal talent.
+- [ ] Tambahkan filter berdasarkan `status` dan `gen`.
+
+## Status Fitur Team
+
+- [x] Fetch data team dari `src/data-team.json`.
+- [x] Render semua team card dengan `map()`.
+- [x] Siapkan pengiriman id team untuk detail.
+- [x] Siapkan modal detail team dan fungsi close.
+- [ ] Tambahkan filter berdasarkan `role`.
 
 ## Change Log
 
@@ -91,14 +97,20 @@ File JSON cukup di-fetch sekali. Promise atau hasil array yang sama dapat diguna
 - Menentukan bahwa data talent sebaiknya di-fetch sekali dan digunakan kembali.
 - Menentukan rencana penggunaan `map()`, `find()`, dan `filter()` untuk fitur talent.
 
-## Known Issues
+### 2026-09-09
 
-- Render card masih perlu memastikan hasil Promise sudah ditunggu sebelum `map()` dijalankan.
-- Event click card belum menerima atau membaca id talent yang diklik.
-- `talentShow()` belum terhubung dengan object talent hasil `find()`.
-- Modal popup belum memiliki satu container stabil yang diisi ulang berdasarkan talent terpilih.
-- Beberapa nama variabel lama masih perlu diseragamkan agar tidak mencampur nama seperti Promise, response, dan array.
-- Tombol filter belum memiliki logic filter.
+- Menyelesaikan render card talent dari data JSON.
+- Menyelesaikan pemilihan talent berdasarkan id dan pengisian modal detail.
+- Menyelesaikan fungsi close modal talent.
+- Menambahkan pola fetch, render, dan detail untuk team card dari `src/data-team.json`.
+- Menyelesaikan pemisahan container card dan modal agar card tidak tertimpa saat detail dibuka.
+- Menetapkan filter talent dan filter team sebagai pekerjaan berikutnya.
+
+## Next Tasks
+
+- Filter talent berdasarkan `status`: `Active` dan `Alum`.
+- Filter team berdasarkan `role`: `All`, `Creative & Production`, dan `Management`.
+- Merapikan CSS modal dan card setelah logic filter selesai.
 
 ## Development Notes
 

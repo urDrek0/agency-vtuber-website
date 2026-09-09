@@ -370,6 +370,9 @@
   .justify-center {
     justify-content: center;
   }
+  .gap-0 {
+    gap: 0px;
+  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
@@ -453,6 +456,9 @@
   }
   .pt-15 {
     padding-top: calc(var(--spacing) * 15);
+  }
+  .pr-14 {
+    padding-right: calc(var(--spacing) * 14);
   }
   .pb-4 {
     padding-bottom: calc(var(--spacing) * 4);

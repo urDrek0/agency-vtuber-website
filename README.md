@@ -26,7 +26,7 @@ npm run dev
 
 Gunakan Live Server atau development server saat membuka website agar `fetch()` dapat membaca file JSON lokal.
 
-## Alur Data Talent
+## Alur Data Talent Dan Team
 
 ```text
 fetch data-talent.json
@@ -45,7 +45,7 @@ array talents
         +--> filter() menyaring status atau generasi
 ```
 
-Data talent diambil sebagai JSON array. Setiap object memiliki `id` unik, informasi profil, gambar card, gambar detail, dan link sosial media.
+Data talent dan team diambil sebagai JSON array. Setiap object memiliki `id` unik, informasi profil, gambar card, dan detail masing-masing.
 
 ## Logic Card Dan Modal
 
@@ -56,6 +56,16 @@ Data talent diambil sebagai JSON array. Setiap object memiliki `id` unik, inform
 5. Gunakan `find()` untuk mendapatkan satu object talent berdasarkan id.
 6. Isi modal menggunakan object talent terpilih.
 7. Tombol close menyembunyikan modal tanpa menghapus card.
+
+Alur team menggunakan pola yang sama:
+
+1. Fetch `src/data-team.json`.
+2. Tunggu Promise sampai menjadi array team.
+3. Gunakan `map()` untuk membuat team card.
+4. Kirim `team.id` saat team card diklik.
+5. Gunakan `find()` untuk mendapatkan satu object team.
+6. Isi modal team menggunakan object team terpilih.
+7. Tombol close menyembunyikan modal team.
 
 Card dan modal harus berada di container yang berbeda. Card tidak boleh ditimpa oleh isi modal.
 
@@ -81,6 +91,10 @@ Property penting:
 - Menggunakan object hasil pencarian untuk menampilkan nama, deskripsi, statistik, gambar, dan link sosial media.
 - Menambahkan fungsi close untuk menyembunyikan modal.
 - Memisahkan konsep container card dan container modal agar card tetap tersedia setelah modal ditutup.
+- Menambahkan alur fetch dan render team card dari `src/data-team.json`.
+- Menambahkan pola pemilihan team berdasarkan `team.id` untuk detail modal team.
+- Menyelesaikan fungsi close pada modal talent dan team.
+- Menetapkan filter talent dan team sebagai pekerjaan berikutnya.
 - Merapikan dokumentasi project dan mencatat tanggal perubahan.
 
 ### 2026-09-08
@@ -97,3 +111,5 @@ Property penting:
 - Fungsi `async` selalu mengembalikan Promise, meskipun nilai akhirnya berupa array.
 - Jalankan `map()`, `find()`, atau `filter()` setelah Promise selesai ditunggu.
 - Jangan fetch ulang setiap card diklik jika data yang sama sudah tersedia.
+- Filter talent yang masih perlu dibuat: `Active` dan `Alum`.
+- Filter team yang masih perlu dibuat: `All`, `Creative & Production`, dan `Management`.

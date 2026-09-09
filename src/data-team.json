@@ -1,0 +1,24 @@
+[
+{
+"id": "id1",
+"nama": "Raka Adinata",
+"position": "Creative Director",
+"desc": "Raka adalah sosok yang penuh dengan ide dan selalu melihat sesuatu dari sudut pandang yang berbeda. Ia memiliki ketertarikan besar terhadap ilustrasi, storytelling, dan berbagai bentuk media kreatif. Baginya, sebuah karya yang baik bukan hanya tentang tampilannya, tetapi juga tentang bagaimana karya tersebut mampu menyampaikan perasaan dan meninggalkan kesan bagi orang yang melihatnya.<br><br>Dalam pekerjaannya sebagai Creative Director, Raka bertanggung jawab mengembangkan konsep visual dan identitas kreatif untuk berbagai project. Ia senang berdiskusi, bertukar ide, dan menggabungkan berbagai perspektif dari anggota tim untuk menghasilkan sesuatu yang lebih menarik. Walaupun terkadang terlalu fokus mengejar detail, Raka selalu berusaha memastikan setiap konsep memiliki alasan dan tujuan yang jelas.<br><br>Di luar pekerjaan, Raka merupakan orang yang cukup santai dan senang mencari inspirasi dari film, musik, game, maupun internet. Ia percaya bahwa kreativitas bisa datang dari mana saja, sehingga ia selalu terbuka terhadap ide-ide baru. Menurutnya, proses membuat sesuatu bersama orang lain adalah bagian paling menyenangkan dari sebuah project.",
+"kesan": "Orangnya santai, penuh ide, dan selalu punya cara unik untuk menyelesaikan masalah.",
+"pesan": "Jangan takut mencoba sesuatu yang berbeda. Ide yang awalnya terlihat aneh bisa saja menjadi sesuatu yang luar biasa.",
+"team_card": "asset/team-card/team-card-raka.png",
+"team_image": "asset/team-image/team-raka-image.png",
+"role": "creative"
+},
+{
+"id": "id2",
+"nama": "Nadia Prameswari",
+"position": "Production Manager",
+"desc": "Nadia adalah seseorang yang dikenal terorganisir, komunikatif, dan cukup tenang ketika menghadapi situasi yang rumit. Ia memiliki kemampuan untuk melihat sebuah project secara keseluruhan sekaligus memperhatikan detail-detail kecil yang sering terlewatkan. Baginya, sebuah project yang sukses tidak hanya membutuhkan ide yang bagus, tetapi juga perencanaan dan kerja sama yang solid.<br><br>Sebagai Production Manager, Nadia bertugas memastikan setiap proses produksi berjalan sesuai dengan timeline dan kebutuhan project. Ia sering menjadi penghubung antara berbagai divisi, mulai dari creative, talent, hingga technical team. Meskipun pekerjaannya terkadang membuatnya harus menghadapi banyak hal sekaligus, Nadia selalu berusaha menjaga komunikasi agar setiap anggota tim mengetahui apa yang harus dilakukan.<br><br>Nadia juga merupakan tipe orang yang senang membantu anggota tim ketika mereka mengalami kesulitan. Ia percaya bahwa tidak ada project yang bisa diselesaikan sendirian dan setiap orang memiliki peran penting di dalamnya. Menurutnya, keberhasilan sebuah tim bukan hanya ketika project selesai, tetapi ketika semua orang dapat berkembang dan menikmati prosesnya bersama.",
+"kesan": "Terlihat serius saat bekerja, tetapi sebenarnya cukup ramah dan gampang diajak ngobrol.",
+"pesan": "Jangan lupa menikmati prosesnya. Sebagus apa pun hasil akhirnya, perjalanan bersama tim adalah sesuatu yang layak dihargai.",
+"team_card": "asset/team-card/team-card-nadia.png",
+"team_image": "asset/team-image/team-nadia-image.png",
+"role": "production2"
+}
+]
