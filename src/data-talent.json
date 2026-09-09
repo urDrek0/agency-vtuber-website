@@ -12,7 +12,6 @@
         "talent_image": "asset/talent-image/yansan-image.png",
         "talent_card": "asset/talent-card/yansan-card.png",
         "status": "Active",
-        "gen": 1,
         "desc": "Yansan adalah alien dari planet Ka-Q, sebuah dunia maju dengan masyarakat yang kaku dan membosankan. Berbeda dari kaumnya, ia ceria, spontan, ramah, dan sangat membenci aturan serta rutinitas. <br><br>Demi kebebasan, ia kabur ke Bumi menggunakan pesawat sederhana, tetapi karena kecerobohannya, ia mendarat di sebuah lahan kosong di Bekasi. Setibanya di Bumi, Yansan langsung ditangkap oleh BPBA (Badan Pengawas Benda Asing) yang telah melacak kedatangannya. Ia menolak mengungkap nama aslinya karena ingin meninggalkan kehidupan lamanya dan memulai hidup baru. <br><br>Setelah menyadari bahwa Yansan tidak berbahaya, BPBA memberinya codename Yansan dan identitas sipil Yayan Santoso, seorang freelance illustrator, meski tetap berada di bawah pengawasan mereka.<br><br>Sebagai illustrator, Yansan akhirnya bisa menjalani kehidupan bebas dan ekspresif yang sesuai dengan kepribadiannya, menjadikan Bumi sebagai tempat untuk berekspresi, bersosialisasi, dan menikmati hidup."
     },
     {
@@ -28,7 +27,6 @@
         "talent_image": "asset/talent-image/arvy-image.png",
         "talent_card": "asset/talent-card/arvy-card.png",
         "status": "Active",
-        "gen": 1,
         "quotes": "",
         "desc": "Arvy adalah seorang remaja yang dikenal sebagai sosok yang street-smart, cukup pandai membaca situasi, cepat beradaptasi, dan terbiasa menghadapi berbagai macam orang di lingkungan perkotaan. Ia menyukai musik rap dan video game, yang menjadi bagian dari kesehariannya. Di balik pembawaannya yang santai, Arvy sebenarnya memiliki rasa ingin tahu yang tinggi dan cukup pandai dalam memecahkan masalah dengan cara yang praktis.<br><br>Saat ini, Arvy merupakan mahasiswa yang sedang mengambil jurusan Computer Science. Ia memiliki ketertarikan pada dunia pemrograman dan keamanan siber, sehingga ia mampu memahami berbagai dasar coding dan CTF (Capture The Flag). Walaupun masih terus belajar dan bukan seorang ahli, Arvy senang mengeksplorasi hal-hal baru di bidang teknologi dan tidak takut mencoba ketika menemukan masalah yang menantang.<br><br>Salah satu sifat Arvy yang paling menonjol adalah ia suka membantu orang lain belajar. Ia senang berbagi pengetahuan, baik tentang coding, CTF, maupun hal-hal yang sudah ia pelajari dari pengalamannya sendiri. Arvy percaya bahwa belajar tidak harus selalu serius atau membosankan; menurutnya, belajar bersama, mencoba, gagal, lalu menemukan solusi sendiri adalah bagian dari proses yang membuat seseorang berkembang."
     },
@@ -45,7 +43,6 @@
         "talent_image": "asset/talent-image/kira-image.png",
         "talent_card": "asset/talent-card/kira-card.png",
         "status": "Active",
-        "gen": 1,
         "quotes": "",
         "desc": ""
     }
