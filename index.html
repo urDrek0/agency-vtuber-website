@@ -36,8 +36,8 @@
         <div id="talent" class="p-8 bg-white shadow-lg justify-center">
             <h1 class="text-3xl font-bold text-center text-6xl p-8 ml-20 mr-20 w-[60%]">Our Talents!</h1>
             <div id="" class="grid grid-cols-2 gap-2 justify-center items-center flex flex-wrap ml-80 mr-235">
-                <button id="talent-active" onclick=talentFilter() class="border border-black p-3 hover:bg-indigo-950 hover:text-white duration-300 w-[6vw]" type="submit">Active</button>
-                <button id="talent-alum" onclick=talentFilter() class="border border-black p-3 hover:bg-indigo-950 hover:text-white duration-300 w-[6vw]" type="submit">Alum</button>
+                <button id="Active" onclick=talentFilter("Active") class="border border-black p-3 hover:bg-indigo-950 hover:text-white duration-300 w-[6vw]" type="submit">Active</button>
+                <button id="Alum" onclick=talentFilter("Alum") class="border border-black p-3 hover:bg-indigo-950 hover:text-white duration-300 w-[6vw]" type="submit">Alum</button>
             </div>
             <!-- card talent -->
             <div id="talent-show" class="flex flex-wrap justify-center gap-4 pt-4">
@@ -64,10 +64,11 @@
             <div class="">
                 <div id="team" class="p-8">
                     <h1 class="text-3xl font-bold text-center text-6xl p-8 ml-20 mr-20 w-[60%]">Our Teams!</h1>
-                    <div id="" class="grid grid-cols-3 gap-2 justify-center items-center flex flex-wrap ml-80 mr-80 ">
-                        <button id="" class="w-min-[5vw] w-max-[8vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit">All</button>
-                        <button id="" class="w-min-[5vw] w-max-[8vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit">Creative & Production</button>
-                        <button id="" class="w-min-[5vw] w-max-[8vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit">Management</button>
+                    <div id="" class="grid grid-cols-4 gap-2 justify-center items-center flex flex-wrap ml-80 mr-80 ">
+                        <button id="all" onclick=renderTeamCard() class="w-min-[5vw] w-max-[8vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit">All</button>
+                        <button id="team-creative" onclick=teamFilter("Creative") class="w-min-[5vw] w-max-[8vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit">Creative</button>
+                        <button id="team-production" onclick=teamFilter("Production") class="w-min-[5vw] w-max-[8vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit">Production</button>
+                        <button id="team-management" onclick=teamFilter("Management") class="w-min-[5vw] w-max-[8vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit">Management</button>
                     </div>
                     <!-- team card -->
                     <div id="team-show" class="flex flex-wrap justify-center gap-4 pt-4">
@@ -166,6 +167,22 @@
             const target = document.getElementById("modal-container");
             target.classList.add('hidden')
         }
+        // talent filter
+        async function talentFilter(status) {
+            var loadData = await returnPromise()
+            var filterStatus = loadData.filter(
+                (talent) => talent.status === status)        
+            console.log(filterStatus)
+            const talentCard = document.querySelector("#talent-show");
+            talentCard.innerHTML = filterStatus.map((talent) =>`
+                <button id="${talent.id}" onclick=talentShow("${talent.id}") class="">
+                    <h1 class="font-bold text-center">${talent.nama}</h1>
+                    <img src="${talent.talent_card}" alt="${talent.nama}" 
+                    class="w-[15vw] h-auto p-3 saturate-80 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300">
+                    </button>
+            `).join("");
+        }
+
 
         // team card and info async function
         function fetchTeam(){
@@ -226,6 +243,21 @@
             const target = document.getElementById("team-modal-container")
             target.classList.add("hidden")
         }
+        // team filter
+        async function teamFilter(role) {
+            var loadTeamData = await returnTeamPromise()
+            var filterStatus = loadTeamData.filter(
+                (team) => team.role === role)
+            console.log(filterStatus)
+            const teamCard = document.querySelector("#team-show");
+            teamCard.innerHTML = filterStatus.map((team) =>`
+                <button id="${team.id}" onclick=teamShow("${team.id}") class="">
+                    <h1 class="font-bold text-center">${team.nama}</h1>
+                    <img src="${team.team_card}" alt="${team.nama}" 
+                    class="w-[15vw] h-auto p-3 saturate-80 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300">
+                </button>
+            `).join("");        
+        } 
     </script>
     </body>
 </html>

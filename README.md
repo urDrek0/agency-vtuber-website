@@ -97,6 +97,14 @@ Property penting:
 - Menetapkan filter talent dan team sebagai pekerjaan berikutnya.
 - Merapikan dokumentasi project dan mencatat tanggal perubahan.
 
+### 2026-09-10
+
+- Menyelesaikan filter talent berdasarkan `status` menggunakan `filter()`.
+- Menyelesaikan filter team berdasarkan `role` menggunakan `filter()`.
+- Menambahkan opsi team `All` untuk menampilkan seluruh team card.
+- Memastikan hasil filter dirender kembali menggunakan `map()`.
+- Menemukan typo atribut event `onclik` yang seharusnya `onclick`, sehingga tombol filter team sebelumnya tidak menjalankan fungsi.
+
 ### 2026-09-08
 
 - Menambahkan id unik pada setiap talent di `src/data-talent.json`.
@@ -111,5 +119,5 @@ Property penting:
 - Fungsi `async` selalu mengembalikan Promise, meskipun nilai akhirnya berupa array.
 - Jalankan `map()`, `find()`, atau `filter()` setelah Promise selesai ditunggu.
 - Jangan fetch ulang setiap card diklik jika data yang sama sudah tersedia.
-- Filter talent yang masih perlu dibuat: `Active` dan `Alum`.
-- Filter team yang masih perlu dibuat: `All`, `Creative & Production`, dan `Management`.
+- Filter talent tersedia untuk `Active` dan `Alum`.
+- Filter team tersedia untuk `All`, `Creative`, `Production`, dan `Management`.

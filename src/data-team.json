@@ -8,7 +8,7 @@
 "pesan": "Jangan takut mencoba sesuatu yang berbeda. Ide yang awalnya terlihat aneh bisa saja menjadi sesuatu yang luar biasa.",
 "team_card": "asset/team-card/team-card-raka.png",
 "team_image": "asset/team-image/team-raka-image.png",
-"role": "creative"
+"role": "Creative"
 },
 {
 "id": "id2",
@@ -19,6 +19,6 @@
 "pesan": "Jangan lupa menikmati prosesnya. Sebagus apa pun hasil akhirnya, perjalanan bersama tim adalah sesuatu yang layak dihargai.",
 "team_card": "asset/team-card/team-card-nadia.png",
 "team_image": "asset/team-image/team-nadia-image.png",
-"role": "production2"
+"role": "Production"
 }
 ]

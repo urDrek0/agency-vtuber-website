@@ -74,7 +74,7 @@ File JSON cukup di-fetch sekali. Promise atau hasil array yang sama dapat diguna
 - [x] Cari talent terpilih dengan `find()`.
 - [x] Isi modal berdasarkan object talent terpilih.
 - [x] Tampilkan dan tutup modal talent.
-- [ ] Tambahkan filter berdasarkan `status` dan `gen`.
+- [x] Filter talent berdasarkan `status`.
 
 ## Status Fitur Team
 
@@ -82,7 +82,7 @@ File JSON cukup di-fetch sekali. Promise atau hasil array yang sama dapat diguna
 - [x] Render semua team card dengan `map()`.
 - [x] Siapkan pengiriman id team untuk detail.
 - [x] Siapkan modal detail team dan fungsi close.
-- [ ] Tambahkan filter berdasarkan `role`.
+- [x] Filter team berdasarkan `role`.
 
 ## Change Log
 
@@ -106,10 +106,16 @@ File JSON cukup di-fetch sekali. Promise atau hasil array yang sama dapat diguna
 - Menyelesaikan pemisahan container card dan modal agar card tidak tertimpa saat detail dibuka.
 - Menetapkan filter talent dan filter team sebagai pekerjaan berikutnya.
 
+### 2026-09-10
+
+- Menyelesaikan filter talent berdasarkan `status` dengan `filter()`.
+- Menyelesaikan filter team berdasarkan `role` dengan `filter()`.
+- Menambahkan render ulang hasil filter menggunakan `map()`.
+- Menambahkan opsi `All` untuk mengembalikan seluruh team card.
+- Menemukan dan mencatat typo `onclik` yang seharusnya `onclick` pada tombol filter team.
+
 ## Next Tasks
 
-- Filter talent berdasarkan `status`: `Active` dan `Alum`.
-- Filter team berdasarkan `role`: `All`, `Creative & Production`, dan `Management`.
 - Merapikan CSS modal dan card setelah logic filter selesai.
 
 ## Development Notes
