@@ -10,69 +10,63 @@
 <body>
     <head class="">
     </head>
-    <nav class="flex space-x-8 justify-center pt-4 fixed center w-full top-0 z-50 p-5">
-        <div class="grid grid-cols-5 gap-8">
-            <a href="#home" class="text-center px-8 py-2.5 rounded-full font-medium inline-block cursor-pointer transition-colors duration-200
-            bg-[#5D3365] text-white shadow-md hover:bg-[#E4D9FF] hover:text-[#4B30C3] ">Home</a>
-            <a href="#talent" class="text-center px-8 py-2.5 rounded-full font-medium inline-block cursor-pointer transition-colors duration-200
-            bg-[#5D3365] text-white shadow-md hover:bg-[#E4D9FF] hover:text-[#4B30C3] ">Talent</a>
-            <a href="#about" class="text-center px-8 py-2.5 rounded-full font-medium inline-block cursor-pointer transition-colors duration-200
-            bg-[#5D3365] text-white shadow-md hover:bg-[#E4D9FF] hover:text-[#4B30C3] ">About</a>
-            <a href="#team" class="text-center px-8 py-2.5 rounded-full font-medium inline-block cursor-pointer transition-colors duration-200
-            bg-[#5D3365] text-white shadow-md hover:bg-[#E4D9FF] hover:text-[#4B30C3] ">Team</a>
-            <a href="#contacts" class="text-center px-8 py-2.5 rounded-full font-medium inline-block cursor-pointer transition-colors duration-200
-            bg-[#5D3365] text-white shadow-md hover:bg-[#E4D9FF] hover:text-[#4B30C3] ">Contacts</a>
+    <nav class="navbar-container">
+        <div class="navbar-grid">
+            <a href="#home" class="navbar-button ">Home</a>
+            <a href="#talent" class="navbar-button">Talent</a>
+            <a href="#about" class="navbar-button">About</a>
+            <a href="#team" class="navbar-button">Team</a>
+            <a href="#contacts" class="navbar-button">Contacts</a>
         </div>
     </nav>
     <main class="">
-        <div id="home" class="relative w-full h-screen overflow-hidden">
-            <img src="asset/background/bg-flare.jpg" alt="Background" class="w-full h-full object-cover">
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#050608]/90 to-[#C13DFE]/50 text-center inset-0 flex flex-col items-center justify-center w-full h-full">
+        <div id="home" class="home-container">
+            <img src="asset/background/bg-flare.jpg" class="home-background-image">
+            <div class="home-component-container">
                 <a href="#contacts">
-                    <img src="asset/logo/logo-agensi.png" alt="Logo" class="w-128 h-auto">
+                    <img src="asset/logo/logo-agensi.png" alt="Logo" class="home-logo-agency">
                 </a>
             </div>
         </div>       
-        <div id="talent" class="p-8 bg-white shadow-lg justify-center">
-            <h1 class="text-3xl font-bold text-center text-6xl p-8 ml-20 mr-20 w-[60%]">Our Talents!</h1>
-            <div id="" class="grid grid-cols-2 gap-2 justify-center items-center flex flex-wrap ml-80 mr-235">
-                <button id="Active" onclick=talentFilter("Active") class="border border-black p-3 hover:bg-indigo-950 hover:text-white duration-300 w-[6vw]" type="submit">Active</button>
-                <button id="Alum" onclick=talentFilter("Alum") class="border border-black p-3 hover:bg-indigo-950 hover:text-white duration-300 w-[6vw]" type="submit">Alum</button>
+        <div id="talent" class="talent-container">
+            <h1 class="talent-tittle">Our Talents!</h1>
+            <div id="" class="talent-filter">
+                <button id="Active" onclick=talentFilter("Active") class="talent-border" type="submit">Active</button>
+                <button id="Alum" onclick=talentFilter("Alum") class="talent-border" type="submit">Alum</button>
             </div>
             <!-- card talent -->
-            <div id="talent-show" class="flex flex-wrap justify-center gap-4 pt-4">
-                <div class="grid grid-cols-5 gap-8">
+            <div id="talent-show" class="talent-card-container">
+                <div class="talent-grid">
                 </div>
             </div>
             <!-- info talent -->
             <div id="modal-talent" class=""></div>
         </div>
-        <section id="about" class="relative h-screen bg-fixed object-cover" style="background-image: url('asset/background/bg-flare.jpg'); overflow: hidden;">
+        <section id="about" class="section-about-container" style="background-image: url('asset/background/bg-flare.jpg');  overflow: hidden;">
             <div id="" class="">
-                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#050608]/90 to-[#C13DFE]/50 text-center inset-0 flex flex-col items-center justify-center w-full h-full">
-                    <h1 class="text-3xl font-bold text-center text-6xl p-8 ml-20 mr-20 w-[60%] text-white">About Us</h1>
-                    <p class="text-white text-lg p-8 ml-20 mr-20 w-[60%]">
-                        "Di antara luasnya alam semesta, terdapat energi tersembunyi yang tercipta dari imajinasi, emosi, dan kehangatan jiwa manusia—energi itu disebut Aether.
-                        <br><br>"Aetheris ID lahir sebagai sebuah Sanctuary dimensi di mana para entitas dari berbagai dunia, lini masa, dan realitas berkumpul. Mereka hadir untuk membagikan kisah, bakat, dan pendar energi kebahagiaan kepada kalian semua di dunia nyata.
-                        <br><br>Bergabunglah bersama kami, dan biarkan sinarmu menyatu dalam kehangatan AetherisID!
-                        <br><br>Aetheris adalah agensi VTuber Independen yang berdedikasi untuk menghadirkan hiburan, cerita manis, dan pendar kehangatan di setiap langkah perjalanan kami. 
-                        <br><br>Di sini, para talent kami dari berbagai dunia dan dimensi berkumpul untuk membagikan keseruan, bakat, dan momen tak terlupakan bersama kalian!</p>
+                <div class="section-about-pos">
+                    <h1 class="section-about-h1">About Us</h1>
+                    <p class="section-about-p1">"Di antara luasnya alam semesta, terdapat energi tersembunyi yang tercipta dari imajinasi, emosi, dan kehangatan jiwa manusia energi itu disebut Aether"</p>
+                    <p class="section-about-p2">Aetheris ID lahir sebagai sebuah Sanctuary dimensi di mana para entitas dari berbagai dunia, lini masa, dan realitas berkumpul. Mereka hadir untuk membagikan kisah, bakat, dan pendar energi kebahagiaan kepada kalian semua di dunia nyata.</p>
+                    <p class="section-about-p3">Bergabunglah bersama kami, dan biarkan sinarmu menyatu dalam kehangatan AetherisID!</p>
+                    <p class="section-about-p4">Aetheris adalah agensi VTuber Independen yang berdedikasi untuk menghadirkan hiburan, cerita manis, dan pendar kehangatan di setiap langkah perjalanan kami. </p>
+                    <p class="section-about-p5">Di sini, para talent kami dari berbagai dunia dan dimensi berkumpul untuk membagikan keseruan, bakat, dan momen tak terlupakan bersama kalian! </p>
                 </div>
             </div>
         </section>
         <section id="team" class="">
             <div class="">
-                <div id="team" class="p-8">
-                    <h1 class="text-3xl font-bold text-center text-6xl p-8 ml-20 mr-20 w-[60%]">Our Teams!</h1>
-                    <div id="" class="grid grid-cols-4 gap-2 justify-center items-center flex flex-wrap ml-80 mr-80 ">
-                        <button id="all" onclick=renderTeamCard() class="w-min-[5vw] w-max-[8vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit">All</button>
-                        <button id="team-creative" onclick=teamFilter("Creative") class="w-min-[5vw] w-max-[8vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit">Creative</button>
-                        <button id="team-production" onclick=teamFilter("Production") class="w-min-[5vw] w-max-[8vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit">Production</button>
-                        <button id="team-management" onclick=teamFilter("Management") class="w-min-[5vw] w-max-[8vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit">Management</button>
+                <div id="team" class="team-div">
+                    <h1 class="team-title">Our Teams!</h1>
+                    <div id="" class="team-grid">
+                        <button id="all" onclick=renderTeamCard() class="team-filter-border" type="submit">All</button>
+                        <button id="team-creative" onclick=teamFilter("Creative") class="team-filter-border" type="submit">Creative</button>
+                        <button id="team-production" onclick=teamFilter("Production") class="team-filter-border" type="submit">Production</button>
+                        <button id="team-management" onclick=teamFilter("Management") class="team-filter-border" type="submit">Management</button>
                     </div>
                     <!-- team card -->
-                    <div id="team-show" class="flex flex-wrap justify-center gap-4 pt-4">
-                        <div class="grid grid-cols-5 gap-8">
+                    <div id="team-show" class="team-card-container">
+                        <div class="team-card-container-grid">
                         </div>
                     </div>
                     <!-- team info -->
@@ -84,17 +78,18 @@
         </section>
     </main>
     <footer id="contacts" style="background-image: url('asset/background/bg-flare.jpg');" class="relative h-screen bg-fixed object-cover">
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-[#050608]/90 to-[#C13DFE]/50 text-center inset-0 flex flex-col items-center justify-center w-full h-full">
-            <h1 id="" class="text-3xl font-bold text-center text-6xl p-8 text-white">Find Us Here!</h1>
-            <div class="grid grid-cols-2 gap-4">
-                <a href="https://www.instagram.com/aetherisofficial" class="" target="_blank"><img src="./asset/logo/logo-ig.png" alt="instagram" class="w-[5vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[deg] hover:scale-105 transition-transform duration-300 "></a>
-                <a href="https://x.com/AetherisID" class="" target="_blank"><img src="./asset/logo/logo-twitter.png" alt="twitter" class="w-[5vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[4deg] hover:scale-105 transition-transform duration-300"></a>
-                <a href="" class="" target="_blank"><img src="./asset/logo/logo-discord.png" alt="discord" class="w-[5vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[4deg] hover:scale-105 transition-transform duration-300"></a>
-                <a href="https://www.youtube.com/@AetherisID" class="" target="_blank"><img src="asset/logo/logo-youtube.png" alt="youtube" class="w-[5vw] h-auto p-3 saturate-40 hover:saturate-100 hover:rotate-[4deg] hover:scale-105 transition-transform duration-300"></a>
+        <div class="contact-text-container">
+            <h1 id="" class="contact-h1">Find Us Here!</h1>
+            <div class="contact-grid">
+                <a href="https://www.instagram.com/aetherisofficial" class="" target="_blank"><img src="./asset/logo/logo-ig.png" alt="instagram" class="contact-img"></a>
+                <a href="https://x.com/AetherisID" class="" target="_blank"><img src="./asset/logo/logo-twitter.png" alt="twitter" class="contact-img"></a>
+                <a href="" class="" target="_blank"><img src="./asset/logo/logo-discord.png" alt="discord" class="contact-img"></a>
+                <a href="https://www.youtube.com/@AetherisID" class="" target="_blank"><img src="asset/logo/logo-youtube.png" alt="youtube" class="contact-img"></a>
+                <a href="" class="" target="_blank"><img src="asset/logo/logo-tiktok.png" alt="tiktok" class="contact-img"></a>
             </div>
         </div>
     </footer>
-    <div id="footer-content" class="bg-[#5D3365] text-white text-center p-4 z-50 bottom-0 w-full">
+    <div id="footer-content" class="footer-content">
         <p class="">Copyright © 2026 Aetheris ID. All rights reserved.</p>
     </div>
 
@@ -115,10 +110,10 @@
             const talentCard = document.querySelector("#talent-show");
             talentCard.innerHTML = loadData.map((talent) =>`
                 <button id="${talent.id}" onclick=talentShow("${talent.id}") class="">
-                    <h1 class="font-bold text-center">${talent.nama}</h1>
+                    <h1 class="talent-button-h1">${talent.nama}</h1>
                     <img src="${talent.talent_card}" alt="${talent.nama}" 
-                    class="w-[15vw] h-auto p-3 saturate-80 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300">
-                    </button>
+                    class="talent-button-image">
+                </button>
             `).join("");
         }
         renderCard();
@@ -131,31 +126,31 @@
                         <div id="modal-container" class="">
                             <div id="" class="modal">
                                 <main id="" class="pt-15">
-                                    <div id="info-container" class="shadow-2xl border border-black border-3px rounded-xl">
-                                        <div id="talent-container" class="grid grid-cols-2 gap-4 items-center w-3/4 mx-auto ">
-                                            <div id="talent-info" class="p-8 mix-blend-multiply">
-                                                <button id="close-talent-info" onclick=talentClose() class="mr-105">
-                                                    <img src="asset/icons/close-button.png" alt="close" class="w-7 h-auto hover:scale-105 ">
+                                    <div id="info-container" class="talent-info-container">
+                                        <div id="talent-container" class="talent-info-div">
+                                            <div id="talent-info" class="talent-info-blend">
+                                                <button id="close-talent-info" onclick=talentClose() class="talent-info-button">
+                                                    <img src="asset/icons/close-button.png" alt="close" class="talent-info-close">
                                                 </button>
-                                                <h1 id="talent-name" class="text-4xl font-bold p-4 text-left">${showedInfo.nama}</h1>
-                                                <p id="talent-description" class="text-black text-justify p-4">${showedInfo.desc}</p>
-                                                <h1 id="talent-stats" class="text-2xl font-bold p-4">Data</h1>
-                                                    <div class="grid grid-cols-2 gap-4 pt-4 pb-4 pl-4 text-left">
-                                                        <h3 class="font-bold">Fanbase</h3><p>${showedInfo.fanbase}</p>
-                                                        <h3 class="font-bold">Status</h3><p>${showedInfo.status}</p>
-                                                        <h3 class="font-bold">Mark</h3><p>${showedInfo.oshi_mark}</p>
+                                                <h1 id="talent-name" class="talent-info-name">${showedInfo.nama}</h1>
+                                                <p id="talent-description" class="talent-info-desc">${showedInfo.desc}</p>
+                                                <h1 id="talent-stats" class="talent-info-stats">Data</h1>
+                                                    <div class="talent-stats-grid">
+                                                        <h3 class="talent-info-data">Fanbase</h3><p>${showedInfo.fanbase}</p>
+                                                        <h3 class="talent-info-data">Status</h3><p>${showedInfo.status}</p>
+                                                        <h3 class="talent-info-data">Mark</h3><p>${showedInfo.oshi_mark}</p>
                                                     </div>
                                                     <div class="">
-                                                        <h1 id="talent-links" class="text-2xl font-bold p-4">Connect!</h1>
-                                                        <div id="" class="grid grid-cols-3 gap-2 justify-center items-center flex flex-wrap pt-4 pb-4 pl-4 font-bold">
-                                                            <a id="" href="${showedInfo.youtube}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Youtube</a>
-                                                            <a id="" href="${showedInfo.instagram}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Instagram</a>
-                                                            <a id="" href="${showedInfo.twitter}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Twitter</a>
-                                                            <a id="" href="${showedInfo.tiktok}" class="text-center w-min-[5vw] w-max-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300" type="submit" target="_blank">Tiktok</a>
+                                                        <h1 id="talent-links" class="talent-links-tittle">Connect!</h1>
+                                                        <div id="" class="talent-links-grid">
+                                                            <a id="" href="${showedInfo.youtube}" class="talent-links-border" type="submit" target="_blank">Youtube</a>
+                                                            <a id="" href="${showedInfo.instagram}" class="talent-links-border" type="submit" target="_blank">Instagram</a>
+                                                            <a id="" href="${showedInfo.twitter}" class="talent-links-border" type="submit" target="_blank">Twitter</a>
+                                                            <a id="" href="${showedInfo.tiktok}" class="talent-links-border" type="submit" target="_blank">Tiktok</a>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            <img id="talent-image" src="${showedInfo.talent_image}" alt="${showedInfo.nama}" class="max-w-150 max-h-200 absolute ml-120 place-self-start">
+                                            <img id="talent-image" src="${showedInfo.talent_image}" alt="${showedInfo.nama}" class="talent-info-image">
                                         </div>
                                     </div>
                                 </main>
@@ -176,10 +171,10 @@
             const talentCard = document.querySelector("#talent-show");
             talentCard.innerHTML = filterStatus.map((talent) =>`
                 <button id="${talent.id}" onclick=talentShow("${talent.id}") class="">
-                    <h1 class="font-bold text-center">${talent.nama}</h1>
+                    <h1 class="talent-button-h1">${talent.nama}</h1>
                     <img src="${talent.talent_card}" alt="${talent.nama}" 
-                    class="w-[15vw] h-auto p-3 saturate-80 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300">
-                    </button>
+                    class="talent-button-image">
+                </button>
             `).join("");
         }
 
@@ -202,7 +197,7 @@
                 <button id="${team.id}" onclick=teamShow("${team.id}") class="">
                     <h1 class="font-bold text-center">${team.nama}</h1>
                     <img src="${team.team_card}" alt="${team.nama}" 
-                    class="w-[15vw] h-auto p-3 saturate-80 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300">
+                    class="team-card-img">
                 </button>
             `).join("");
         } 
@@ -216,22 +211,22 @@
                         <div id="team-modal-container" class="">
                             <div id="" class="modal">
                                 <main id="" class="pt-15">
-                                    <div id="info-container" class="shadow-2xl border border-black border-3px rounded-xl">
-                                        <div id="team-container" class="grid grid-cols-2 gap-4 items-center w-3/4 mx-auto ">
+                                    <div id="info-container" class="team-info-container">
+                                        <div id="team-container" class="team-info-grid">
                                             <div id="team-info" class="p-8 mix-blend-multiply">
-                                                <button id="close-team-info" onclick=teamClose() class="mr-105">
-                                                    <img src="asset/icons/close-button.png" alt="close" class="w-7 h-auto hover:scale-105 ">
+                                                <button id="close-team-info" onclick=teamClose() class="team-info-close">
+                                                    <img src="asset/icons/close-button.png" alt="close" class="team-info-close-img ">
                                                 </button>
                                                 <h1 id="team-name" class="text-4xl font-bold p-4 text-left">${showedInfo.nama}</h1>
                                                 <p id="team-description" class="text-black text-justify p-4">${showedInfo.desc}</p>
-                                                <h1 id="team-stats" class="text-2xl font-bold p-4">Data</h1>
+                                                <h1 id="team-stats" class="team-info-data-tittle">Data</h1>
                                                     <div class="grid grid-cols-2 gap-4 pt-4 pb-4 pl-4 text-left">
                                                         <h3 class="font-bold">Position</h3><p class="text-justify">${showedInfo.position}</p>
                                                         <h3 class="font-bold">Kesan</h3><p class="text-justify">${showedInfo.kesan}</p>
                                                         <h3 class="font-bold">Pesan</h3><p class="text-justify">${showedInfo.pesan}</p>
                                                     </div>
                                                 </div>
-                                            <img id="team-image" src="${showedInfo.team_image}" alt="${showedInfo.nama}" class="max-w-150 max-h-200 absolute ml-120 place-self-start pt-8">
+                                            <img id="team-image" src="${showedInfo.team_image}" alt="${showedInfo.nama}" class="team-info-image">
                                         </div>
                                     </div>
                                 </main>
@@ -254,7 +249,7 @@
                 <button id="${team.id}" onclick=teamShow("${team.id}") class="">
                     <h1 class="font-bold text-center">${team.nama}</h1>
                     <img src="${team.team_card}" alt="${team.nama}" 
-                    class="w-[15vw] h-auto p-3 saturate-80 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300">
+                    class="team-card-img">
                 </button>
             `).join("");        
         } 
