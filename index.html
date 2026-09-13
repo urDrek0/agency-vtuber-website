@@ -125,40 +125,39 @@
                 target.innerHTML =`
                         <div id="modal-container" class="">
                             <div id="" class="modal">
-                                <main id="" class="pt-15">
+                                <main id="" class="talent-info-main">
                                     <div id="info-container" class="talent-info-container">
-                                        <div id="talent-container" class="talent-info-div">
-                                            <div id="talent-info" class="talent-info-blend">
-                                                <button id="close-talent-info" onclick=talentClose() class="talent-info-button">
-                                                    <img src="asset/icons/close-button.png" alt="close" class="talent-info-close">
-                                                </button>
-                                                <h1 id="talent-name" class="talent-info-name">${showedInfo.nama}</h1>
-                                                <p id="talent-description" class="talent-info-desc">${showedInfo.desc}</p>
-                                                <h1 id="talent-stats" class="talent-info-stats">Data</h1>
-                                                    <div class="talent-stats-grid">
-                                                        <h3 class="talent-info-data">Fanbase</h3><p>${showedInfo.fanbase}</p>
-                                                        <h3 class="talent-info-data">Status</h3><p>${showedInfo.status}</p>
-                                                        <h3 class="talent-info-data">Mark</h3><p>${showedInfo.oshi_mark}</p>
-                                                    </div>
-                                                    <div class="">
-                                                        <h1 id="talent-links" class="talent-links-tittle">Connect!</h1>
-                                                        <div id="" class="talent-links-grid">
-                                                            <a id="" href="${showedInfo.youtube}" class="talent-links-border" type="submit" target="_blank">Youtube</a>
-                                                            <a id="" href="${showedInfo.instagram}" class="talent-links-border" type="submit" target="_blank">Instagram</a>
-                                                            <a id="" href="${showedInfo.twitter}" class="talent-links-border" type="submit" target="_blank">Twitter</a>
-                                                            <a id="" href="${showedInfo.tiktok}" class="talent-links-border" type="submit" target="_blank">Tiktok</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            <img id="talent-image" src="${showedInfo.talent_image}" alt="${showedInfo.nama}" class="talent-info-image">
+                                        <button id="close-talent-info" onclick=talentClose()  class="talent-button-position">
+                                            <img src="asset/icons/close-button.png" alt="close"  class="talent-button-close">
+                                        </button>
+                                        <h1 id="talent-name"  class="talent-info-name">${showedInfo.nama}</h1>
+                                        <div class="talent-info-desc-img-grid">
+                                            <img id="talent-image" class="talent-info-img" src="${showedInfo.talent_image}" alt="Yansan"  >
+                                            <p id="talent-description"  class="talent-info-desc">${showedInfo.desc}</p>
                                         </div>
+                                        <div class="talent-info-data-connect-grid">
+                                            <h1 id="talent-stats" class="talent-info-tittle-data">Data</h1>
+                                            <h1 id="talent-links"  class="talent-info-tittle-connect">Connect!</h1>
+                                            <div  class="talent-info-data-grid">
+                                                <h3 class="font-bold">Fanbase</h3><p class="text-left">${showedInfo.fanbase}</p>
+                                                <h3 class="font-bold">Status</h3><p class="text-left">${showedInfo.status}</p>
+                                                <h3 class="font-bold">Oshi Mark</h3><p class="text-left">${showedInfo.oshi_mark}</p>
+                                            </div>
+                                            <div id=""  class="talent-info-connect-grid">
+                                                <a id="" href="${showedInfo.youtube}"  class="talent-info-connect-border" type="submit" target="_blank">Youtube</a>
+                                                <a id="" href="${showedInfo.instagram}"  class="talent-info-connect-border" type="submit" target="_blank">Instagram</a>
+                                                <a id="" href="${showedInfo.twitter}" class="talent-info-connect-border" type="submit" target="_blank">Twitter</a>
+                                                <a id="" href="${showedInfo.tiktok}"  class="talent-info-connect-border" type="submit" target="_blank">Tiktok</a>
+                                            </div> 
+                                        </div>              
                                     </div>
                                 </main>
                             </div>
-                        </div>
+                        </div> 
                         `
                     }
-        function talentClose(){
+        async function talentClose(){
+            var loadData = await returnPromise()
             const target = document.getElementById("modal-container");
             target.classList.add('hidden')
         }
@@ -166,16 +165,22 @@
         async function talentFilter(status) {
             var loadData = await returnPromise()
             var filterStatus = loadData.filter(
-                (talent) => talent.status === status)        
-            console.log(filterStatus)
-            const talentCard = document.querySelector("#talent-show");
-            talentCard.innerHTML = filterStatus.map((talent) =>`
-                <button id="${talent.id}" onclick=talentShow("${talent.id}") class="">
-                    <h1 class="talent-button-h1">${talent.nama}</h1>
-                    <img src="${talent.talent_card}" alt="${talent.nama}" 
-                    class="talent-button-image">
-                </button>
-            `).join("");
+                (talent) => talent.status === status)   
+            const talentCard = document.querySelector("#talent-show");     
+            console.log(filterStatus.length)
+            if (filterStatus.length === 0){
+                talentClose()
+                talentCard.innerHTML = `Data tidak ditemukan`
+            }else{
+                talentClose()
+                talentCard.innerHTML = filterStatus.map((talent) =>`
+                    <button id="${talent.id}" onclick=talentShow("${talent.id}") class="">
+                        <h1 class="talent-button-h1">${talent.nama}</h1>
+                        <img src="${talent.talent_card}" alt="${talent.nama}" 
+                        class="talent-button-image">
+                    </button>
+                `).join("");
+            }
         }
 
 
@@ -234,7 +239,8 @@
                         </div>
             `
         }
-        function teamClose(){
+        async function teamClose(){
+            var loadTeamData = await returnTeamPromise()
             const target = document.getElementById("team-modal-container")
             target.classList.add("hidden")
         }
@@ -245,14 +251,19 @@
                 (team) => team.role === role)
             console.log(filterStatus)
             const teamCard = document.querySelector("#team-show");
-            teamCard.innerHTML = filterStatus.map((team) =>`
-                <button id="${team.id}" onclick=teamShow("${team.id}") class="">
-                    <h1 class="font-bold text-center">${team.nama}</h1>
-                    <img src="${team.team_card}" alt="${team.nama}" 
-                    class="team-card-img">
-                </button>
-            `).join("");        
-        } 
+            if (filterStatus ===0){
+                teamClose()
+                teamCard.innerHTML = `Data Tidak Ditemukan`
+            }else{
+                teamClose()
+                teamCard.innerHTML = filterStatus.map((team) =>`
+                    <button id="${team.id}" onclick=teamShow("${team.id}") class="">
+                        <h1 class="font-bold text-center">${team.nama}</h1>
+                        <img src="${team.team_card}" alt="${team.nama}" 
+                        class="team-card-img">
+                    </button>
+                `).join("");        
+            } }
     </script>
     </body>
 </html>

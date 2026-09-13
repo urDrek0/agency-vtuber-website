@@ -177,135 +177,129 @@
     }
 }
 /* talent info */
+.talent-info-main{ @apply pt-15 place-items-center;}
 .talent-info-container{
-    @apply shadow-2xl border border-black border-2 rounded-xl;
+    @apply bg-white border border-2 shadow-xl w-95/100 rounded-xl;
 }
-.talent-info-div{
-    @apply grid grid-cols-2 gap-4 items-center w-3/4 mx-auto;
+.talent-button-position{
+    @apply pt-5 pl-5 pb-2;
 }
-.talent-info-blend{
-    @apply p-8 mix-blend-multiply;
-}
-.talent-info-button{
-    @apply mr-105;
-}
-.talent-info-close{
-    @apply w-7 h-auto hover:scale-105 ;
+.talent-button-close{
+    @apply w-7 h-auto;
 }
 .talent-info-name{
-    @apply text-4xl font-bold p-4 text-left ;
+    @apply font-bold text-4xl text-center;
 }
-.talent-info-desc{
-    @apply text-black text-justify p-4;
+.talent-info-desc-img-grid{ 
+    @apply grid grid-cols-1 gap-4 p-8;
 }
-.talent-info-stats{
-    @apply text-2xl font-bold p-4;
+.talent-info-img{
+    @apply w-45 h-auto place-self-center;
 }
-.talent-stats-grid{
-    @apply grid grid-cols-2 gap-4 pt-4 pb-4 pl-4 text-left;
+.talent-info-desc{ 
+    @apply text-justify place-self-center;
 }
-.talent-info-data{
-    @apply font-bold;
+.talent-info-data-connect-grid{ 
+    @apply grid grid-cols-1 gap-4 w-95/100 justify-center p-4;
 }
-.talent-links-tittle{
-    @apply text-2xl font-bold p-4;
+.talent-info-tittle-data{ 
+    @apply order-1 text-center font-bold text-3xl;
 }
-.talent-links-grid{
-    @apply grid grid-cols-3 gap-2 justify-center items-center flex flex-wrap pt-4 pb-4 pl-4 font-bold;
+.talent-info-tittle-connect{ 
+    @apply order-3 text-center font-bold text-3xl;
 }
-.talent-links-border{
-    @apply text-center min-w-[5vw] max-w-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300;
+.talent-info-data-grid{ 
+    @apply order-2 grid grid-cols-2 gap-4 p-4 self-center;
 }
-.talent-info-image{
-    @apply w-[45vw] h-auto place-self-start pt-5;
+.talent-info-connect-grid{ 
+    @apply order-4 grid grid-cols-2 gap-4 p-4 self-center;
+}
+.talent-info-connect-border{ 
+    @apply border-2 text-center font-bold p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300;
 }
 
 @media(min-width:768px){
+    .talent-info-main{ @apply pt-15 place-items-center;}
     .talent-info-container{
-        @apply shadow-2xl border border-black border-2 rounded-xl;
+        @apply bg-white border border-2 shadow-xl w-95/100 rounded-xl;
     }
-    .talent-info-div{
-        @apply grid grid-cols-2 gap-4 items-center w-3/4 mx-auto;
+    .talent-button-position{
+        @apply pt-5 pl-5;
     }
-    .talent-info-blend{
-        @apply p-8 mix-blend-multiply;
-    }
-    .talent-info-button{
-        @apply mr-105;
-    }
-    .talent-info-close{
-        @apply w-7 h-auto hover:scale-105 ;
+    .talent-button-close{
+        @apply w-10 h-auto;
     }
     .talent-info-name{
-        @apply text-4xl font-bold p-4 text-left ;
+        @apply font-bold text-6xl text-center;
     }
-    .talent-info-desc{
-        @apply text-black text-justify p-4;
+    .talent-info-desc-img-grid{ 
+        @apply grid grid-cols-2 gap-4 p-8;
     }
-    .talent-info-stats{
-        @apply text-2xl font-bold p-4;
+    .talent-info-img{
+        @apply order-2 w-100 h-auto place-self-start;
     }
-    .talent-stats-grid{
-        @apply grid grid-cols-2 gap-4 pt-4 pb-4 pl-4 text-left;
+    .talent-info-desc{ 
+        @apply order-1 text-justify place-self-end;
     }
-    .talent-info-data{
-        @apply font-bold;
+    .talent-info-data-connect-grid{ 
+        @apply grid grid-cols-2 gap-4 w-95/100 justify-center p-4;
     }
-    .talent-links-tittle{
-        @apply text-2xl font-bold p-4;
+    .talent-info-tittle-data{ 
+        @apply order-1 text-center font-bold text-3xl;
     }
-    .talent-links-grid{
-        @apply grid grid-cols-3 gap-2 justify-center items-center flex flex-wrap pt-4 pb-4 pl-4 font-bold;
+    .talent-info-tittle-connect{ 
+        @apply order-2 text-center font-bold text-3xl;
     }
-    .talent-links-border{
-        @apply text-center min-w-[5vw] max-w-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300;
+    .talent-info-data-grid{ 
+        @apply order-3 grid grid-cols-2 gap-4 p-4 self-center;
     }
-    .talent-info-image{
-        @apply w-150 h-auto place-self-start pt-5;
+    .talent-info-connect-grid{ 
+        @apply order-4 grid grid-cols-2 gap-4 p-4 self-center;
+    }
+    .talent-info-connect-border{ 
+        @apply border-2 text-center font-bold p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300;
     }
 }
 @media(min-width:1024px){
+    .talent-info-main{ @apply pt-15 place-items-center;}
     .talent-info-container{
-        @apply shadow-2xl border border-black border-2 rounded-xl;
+        @apply bg-white border border-2 shadow-xl w-95/100 rounded-xl;
     }
-    .talent-info-div{
-        @apply items-center w-3/4 mx-auto;
+    .talent-button-position{
+        @apply pt-5 pl-5;
     }
-    .talent-info-blend{
-        @apply p-8 mix-blend-multiply;
-    }
-    .talent-info-button{
-        @apply mr-105;
-    }
-    .talent-info-close{
-        @apply w-7 h-auto hover:scale-105 ;
+    .talent-button-close{
+        @apply w-10 h-auto;
     }
     .talent-info-name{
-        @apply text-2xl font-bold p-4 text-left ;
+        @apply font-bold text-6xl text-center;
     }
-    .talent-info-desc{
-        @apply text-black text-justify p-4;
+    .talent-info-desc-img-grid{ 
+        @apply grid grid-cols-2 gap-4 p-8;
     }
-    .talent-info-stats{
-        @apply text-2xl font-bold p-4;
+    .talent-info-img{
+        @apply order-2 w-100 h-auto place-self-start;
     }
-    .talent-stats-grid{
-        @apply grid grid-cols-2 gap-4 pt-4 pb-4 pl-4 text-left;
+    .talent-info-desc{ 
+        @apply order-1 text-justify place-self-end;
     }
-    .talent-info-data{
-        @apply font-bold;
+    .talent-info-data-connect-grid{ 
+        @apply grid grid-cols-2 gap-4 w-95/100 justify-center p-4;
     }
-    .talent-links-tittle{
-        @apply text-2xl font-bold p-4;
+    .talent-info-tittle-data{ 
+        @apply order-1 text-center font-bold text-3xl;
     }
-    .talent-links-grid{
-        @apply grid grid-cols-3 gap-2 justify-center items-center flex flex-wrap pt-4 pb-4 pl-4 font-bold;
+    .talent-info-tittle-connect{ 
+        @apply order-2 text-center font-bold text-3xl;
     }
-    .talent-links-border{
-        @apply text-center min-w-[5vw] max-w-[15vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300;
+    .talent-info-data-grid{ 
+        @apply order-3 grid grid-cols-2 gap-4 p-4 self-center;
     }
-    .talent-info-image{
-        @apply w-150 h-auto place-self-start pt-5;
+    .talent-info-connect-grid{ 
+        @apply order-4 grid grid-cols-2 gap-4 p-4 self-center;
+    }
+    .talent-info-connect-border{ 
+        @apply border-2 text-center font-bold p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300;
     }
 }
 
@@ -389,10 +383,10 @@
 
 /* team tittle */
 .team-div{
-    @apply p-8;
+    @apply p-8 place-self-center;
 }
 .team-title{
-    @apply text-3xl font-bold text-center text-6xl p-8;
+    @apply  font-bold text-center text-6xl p-8;
 }
 .team-grid{
     @apply grid grid-cols-2 gap-2 justify-center items-center flex flex-wrap ;
@@ -402,10 +396,10 @@
         @apply p-8;
     }
     .team-title{
-        @apply text-3xl font-bold text-center text-6xl p-8;
+        @apply  font-bold text-center text-6xl p-8;
     }
     .team-grid{
-        @apply grid grid-cols-4 gap-2 justify-center items-center flex flex-wrap ml-127 mr-127 ;
+        @apply grid grid-cols-4 gap-2 justify-center items-center flex flex-wrap ;
     }
 }
 @media(min-width:1024px){
@@ -416,7 +410,7 @@
         @apply text-3xl font-bold text-center text-6xl p-8;
     }
     .team-grid{
-        @apply grid grid-cols-4 gap-2 justify-center items-center flex flex-wrap ml-127 mr-127 ;
+        @apply grid grid-cols-4 gap-2 justify-center  ;
     }
 }
 
@@ -431,7 +425,7 @@
 }
 @media(min-width:1024px){
     .team-filter-border{
-        @apply min-w-[5vw] max-w-[8vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300;
+        @apply w-auto border border-black hover:bg-indigo-950 hover:text-white transition-colors duration-300 justify-center;
     }
 }
 
