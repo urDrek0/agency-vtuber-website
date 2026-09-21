@@ -13,6 +13,7 @@
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-2xl: 1.5rem;
@@ -238,6 +239,9 @@
   .w-100 {
     width: calc(var(--spacing) * 100);
   }
+  .cursor-pointer {
+    cursor: pointer;
+  }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -294,20 +298,11 @@
   .p-8 {
     padding: calc(var(--spacing) * 8);
   }
-  .pt-4 {
-    padding-top: calc(var(--spacing) * 4);
-  }
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
   }
   .pt-15 {
     padding-top: calc(var(--spacing) * 15);
-  }
-  .pb-4 {
-    padding-bottom: calc(var(--spacing) * 4);
-  }
-  .pl-4 {
-    padding-left: calc(var(--spacing) * 4);
   }
   .pl-5 {
     padding-left: calc(var(--spacing) * 5);
@@ -325,10 +320,6 @@
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
-  .text-4xl {
-    font-size: var(--text-4xl);
-    line-height: var(--tw-leading, var(--text-4xl--line-height));
-  }
   .text-6xl {
     font-size: var(--text-6xl);
     line-height: var(--tw-leading, var(--text-6xl--line-height));
@@ -336,12 +327,6 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-  }
-  .text-black {
-    color: var(--color-black);
-  }
-  .mix-blend-multiply {
-    mix-blend-mode: multiply;
   }
   .shadow-xl {
     --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
@@ -368,7 +353,25 @@
     }
   }
 }
-body {
+p {
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+h1 {
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+h3 {
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+a {
   font-family: "Comfortaa", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
@@ -379,11 +382,6 @@ body {
   top: 0px;
   z-index: 50;
   justify-content: center;
-  :where(& > :not(:last-child)) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
-    margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
-  }
   padding-top: calc(var(--spacing) * 4);
   padding-right: calc(var(--spacing) * 2);
   padding-left: calc(var(--spacing) * 2);
@@ -399,12 +397,10 @@ body {
   justify-content: center;
   border-radius: calc(infinity * 1px);
   background-color: #5D3365;
-  padding: 3;
+  padding: calc(var(--spacing) * 2);
   text-align: center;
   font-size: var(--text-sm);
-  line-height: calc(var(--spacing) * 7);
-  --tw-font-weight: var(--font-weight-bold);
-  font-weight: var(--font-weight-bold);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
   color: var(--color-white);
   --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -413,16 +409,6 @@ body {
   transition-duration: var(--tw-duration, var(--default-transition-duration));
   --tw-duration: 200ms;
   transition-duration: 200ms;
-  &:hover {
-    @media (hover: hover) {
-      background-color: #E4D9FF;
-    }
-  }
-  &:hover {
-    @media (hover: hover) {
-      color: #4B30C3;
-    }
-  }
 }
 @media (min-width: 768px) {
   .navbar-container {
@@ -697,6 +683,7 @@ body {
 }
 .talent-border {
   width: auto;
+  cursor: pointer;
   justify-content: center;
   border-style: var(--tw-border-style);
   border-width: 1px;
@@ -729,6 +716,7 @@ body {
   }
   .talent-border {
     width: 6vw;
+    cursor: pointer;
     justify-content: center;
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -763,6 +751,7 @@ body {
   }
   .talent-border {
     width: 6vw;
+    cursor: pointer;
     justify-content: center;
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -803,7 +792,7 @@ body {
 }
 .talent-button-image {
   height: auto;
-  width: 45vw;
+  width: 35vw;
   padding: calc(var(--spacing) * 3);
   --tw-saturate: saturate(80%);
   filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
@@ -1511,13 +1500,12 @@ body {
   font-weight: var(--font-weight-bold);
 }
 .team-grid {
-  display: flex;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: calc(var(--spacing) * 2);
+  place-self: center;
 }
 @media (min-width:768px) {
   .team-div {
@@ -1532,13 +1520,12 @@ body {
     font-weight: var(--font-weight-bold);
   }
   .team-grid {
-    display: flex;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: calc(var(--spacing) * 2);
+    place-self: center;
   }
 }
 @media (min-width:1024px) {
@@ -1560,10 +1547,12 @@ body {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     justify-content: center;
     gap: calc(var(--spacing) * 2);
+    place-self: center;
   }
 }
 .team-filter-border {
   max-width: calc(var(--spacing) * 35);
+  cursor: pointer;
   border-style: var(--tw-border-style);
   border-width: 1px;
   border-color: var(--color-black);
@@ -1588,6 +1577,7 @@ body {
   .team-filter-border {
     max-width: 8vw;
     min-width: 5vw;
+    cursor: pointer;
     border-style: var(--tw-border-style);
     border-width: 1px;
     border-color: var(--color-black);
@@ -1612,6 +1602,7 @@ body {
 @media (min-width:1024px) {
   .team-filter-border {
     width: auto;
+    cursor: pointer;
     justify-content: center;
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -1733,16 +1724,14 @@ body {
 }
 @media (min-width:1024px) {
   .team-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: calc(var(--spacing) * 4);
     padding-top: calc(var(--spacing) * 4);
   }
   .team-card-container-grid {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
+    justify-content: center;
     gap: calc(var(--spacing) * 8);
+    place-self: center;
   }
   .team-card-h1 {
     text-align: center;
@@ -1790,16 +1779,9 @@ body {
   --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
 }
-.team-info-grid {
-  margin-inline: auto;
-  display: grid;
-  width: calc(3 / 4 * 100%);
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: center;
-  gap: calc(var(--spacing) * 4);
-}
 .team-info-close {
-  margin-right: calc(var(--spacing) * 105);
+  padding-top: calc(var(--spacing) * 4);
+  padding-left: calc(var(--spacing) * 4);
 }
 .team-info-close-img {
   height: auto;
@@ -1814,7 +1796,6 @@ body {
   }
 }
 .team-info-name {
-  padding: calc(var(--spacing) * 4);
   text-align: left;
   font-size: var(--text-4xl);
   line-height: var(--tw-leading, var(--text-4xl--line-height));
@@ -1822,12 +1803,14 @@ body {
   font-weight: var(--font-weight-bold);
 }
 .team-info-desc {
+  order: 2;
   padding: calc(var(--spacing) * 4);
   text-align: justify;
   color: var(--color-black);
 }
 .team-info-data-tittle {
   padding: calc(var(--spacing) * 4);
+  text-align: center;
   font-size: var(--text-2xl);
   line-height: var(--tw-leading, var(--text-2xl--line-height));
   --tw-font-weight: var(--font-weight-bold);
@@ -1835,7 +1818,7 @@ body {
 }
 .team-info-data-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: calc(var(--spacing) * 4);
   padding-top: calc(var(--spacing) * 4);
   padding-bottom: calc(var(--spacing) * 4);
@@ -1843,12 +1826,26 @@ body {
   text-align: left;
 }
 .team-info-image {
-  position: absolute;
-  margin-left: calc(var(--spacing) * 120);
-  max-height: calc(var(--spacing) * 200);
-  max-width: calc(var(--spacing) * 150);
-  place-self: start;
-  padding-top: calc(var(--spacing) * 8);
+  order: 1;
+  max-height: calc(var(--spacing) * 100);
+  max-width: calc(var(--spacing) * 80);
+  place-self: center;
+  padding: calc(var(--spacing) * 2);
+  padding-top: calc(var(--spacing) * 2);
+}
+.team-info-p {
+  grid-column: span 2 / span 2;
+  width: calc(4 / 5 * 100%);
+  text-align: justify;
+}
+.team-grid-img-desc {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.team-info-data-trope {
+  place-items: center;
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
 }
 @media (min-width:768px) {
   .team-info-container {
@@ -1860,16 +1857,9 @@ body {
     --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .team-info-grid {
-    margin-inline: auto;
-    display: grid;
-    width: calc(3 / 4 * 100%);
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: center;
-    gap: calc(var(--spacing) * 4);
-  }
   .team-info-close {
-    margin-right: calc(var(--spacing) * 105);
+    padding-top: calc(var(--spacing) * 4);
+    padding-left: calc(var(--spacing) * 4);
   }
   .team-info-close-img {
     height: auto;
@@ -1892,12 +1882,15 @@ body {
     font-weight: var(--font-weight-bold);
   }
   .team-info-desc {
+    order: 1;
+    grid-column: span 2 / span 2;
     padding: calc(var(--spacing) * 4);
     text-align: justify;
     color: var(--color-black);
   }
   .team-info-data-tittle {
     padding: calc(var(--spacing) * 4);
+    text-align: center;
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
     --tw-font-weight: var(--font-weight-bold);
@@ -1905,7 +1898,7 @@ body {
   }
   .team-info-data-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: calc(var(--spacing) * 4);
     padding-top: calc(var(--spacing) * 4);
     padding-bottom: calc(var(--spacing) * 4);
@@ -1913,16 +1906,31 @@ body {
     text-align: left;
   }
   .team-info-image {
-    position: absolute;
-    margin-left: calc(var(--spacing) * 120);
-    max-height: calc(var(--spacing) * 200);
-    max-width: calc(var(--spacing) * 150);
+    order: 2;
+    max-height: calc(var(--spacing) * 100);
+    max-width: calc(var(--spacing) * 100);
     place-self: start;
     padding-top: calc(var(--spacing) * 8);
+  }
+  .team-info-p {
+    grid-column: span 2 / span 2;
+    width: calc(4 / 5 * 100%);
+    text-align: justify;
+  }
+  .team-grid-img-desc {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .team-info-data-trope {
+    place-items: center;
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
   }
 }
 @media (min-width:1024px) {
   .team-info-container {
+    place-items: center;
+    justify-content: center;
     border-radius: var(--radius-xl);
     border-width: 1px;
     border-style: var(--tw-border-style);
@@ -1931,16 +1939,9 @@ body {
     --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .team-info-grid {
-    margin-inline: auto;
-    display: grid;
-    width: calc(3 / 4 * 100%);
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: center;
-    gap: calc(var(--spacing) * 4);
-  }
   .team-info-close {
-    margin-right: calc(var(--spacing) * 105);
+    padding-top: calc(var(--spacing) * 4);
+    padding-left: calc(var(--spacing) * 4);
   }
   .team-info-close-img {
     height: auto;
@@ -1963,12 +1964,15 @@ body {
     font-weight: var(--font-weight-bold);
   }
   .team-info-desc {
+    order: 1;
+    grid-column: span 2 / span 2;
     padding: calc(var(--spacing) * 4);
     text-align: justify;
     color: var(--color-black);
   }
   .team-info-data-tittle {
     padding: calc(var(--spacing) * 4);
+    text-align: center;
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
     --tw-font-weight: var(--font-weight-bold);
@@ -1976,7 +1980,8 @@ body {
   }
   .team-info-data-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: calc(3 / 4 * 100%);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: calc(var(--spacing) * 4);
     padding-top: calc(var(--spacing) * 4);
     padding-bottom: calc(var(--spacing) * 4);
@@ -1984,12 +1989,25 @@ body {
     text-align: left;
   }
   .team-info-image {
-    position: absolute;
-    margin-left: calc(var(--spacing) * 120);
-    max-height: calc(var(--spacing) * 200);
+    order: 2;
+    max-height: calc(var(--spacing) * 100);
     max-width: calc(var(--spacing) * 150);
     place-self: start;
     padding-top: calc(var(--spacing) * 8);
+  }
+  .team-info-p {
+    grid-column: span 2 / span 2;
+    width: calc(4 / 5 * 100%);
+    text-align: justify;
+  }
+  .team-grid-img-desc {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .team-info-data-trope {
+    place-items: center;
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
   }
 }
 .contact-bg {
@@ -2357,11 +2375,6 @@ body {
   syntax: "*";
   inherits: false;
 }
-@property --tw-space-y-reverse {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
 @property --tw-space-x-reverse {
   syntax: "*";
   inherits: false;
@@ -2492,7 +2505,6 @@ body {
       --tw-drop-shadow-alpha: 100%;
       --tw-drop-shadow-size: initial;
       --tw-duration: initial;
-      --tw-space-y-reverse: 0;
       --tw-space-x-reverse: 0;
       --tw-gradient-position: initial;
       --tw-gradient-from: #0000;

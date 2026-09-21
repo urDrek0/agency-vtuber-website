@@ -93,7 +93,6 @@
     <div id="footer-content" class="footer-content">
         <p class="">Copyright © 2026 Aetheris ID. All rights reserved.</p>
     </div>
-
     <script>
         "use strict";
         // talent card and info async function
@@ -110,7 +109,7 @@
             var loadData = await returnPromise()
             const talentCard = document.querySelector("#talent-show");
             talentCard.innerHTML = loadData.map((talent) =>`
-                <button id="${talent.id}" onclick=talentShow("${talent.id}") class="">
+                <button id="${talent.id}" onclick=talentShow("${talent.id}") class="cursor-pointer">
                     <h1 class="talent-button-h1">${talent.nama}</h1>
                     <img src="${talent.talent_card}" alt="${talent.nama}" 
                     class="talent-button-image">
@@ -175,7 +174,7 @@
             }else{
                 talentClose()
                 talentCard.innerHTML = filterStatus.map((talent) =>`
-                    <button id="${talent.id}" onclick=talentShow("${talent.id}") class="">
+                    <button id="${talent.id}" onclick=talentShow("${talent.id}") class="cursor-pointer">
                         <h1 class="talent-button-h1">${talent.nama}</h1>
                         <img src="${talent.talent_card}" alt="${talent.nama}" 
                         class="talent-button-image">
@@ -200,7 +199,7 @@
             var loadTeamData = await returnTeamPromise()
             const teamCard = document.querySelector("#team-show");
             teamCard.innerHTML = loadTeamData.map((team) =>`
-                <button id="${team.id}" onclick=teamShow("${team.id}") class="">
+                <button id="${team.id}" onclick=teamShow("${team.id}") class="cursor-pointer">
                     <h1 class="font-bold text-center">${team.nama}</h1>
                     <img src="${team.team_card}" alt="${team.nama}" 
                     class="team-card-img">
@@ -218,21 +217,21 @@
                             <div id="" class="modal">
                                 <main id="" class="pt-15">
                                     <div id="info-container" class="team-info-container">
-                                        <div id="team-container" class="team-info-grid">
-                                            <div id="team-info" class="p-8 mix-blend-multiply">
-                                                <button id="close-team-info" onclick=teamClose() class="team-info-close">
-                                                    <img src="asset/icons/close-button.png" alt="close" class="team-info-close-img ">
-                                                </button>
-                                                <h1 id="team-name" class="text-4xl font-bold p-4 text-left">${showedInfo.nama}</h1>
-                                                <p id="team-description" class="text-black text-justify p-4">${showedInfo.desc}</p>
-                                                <h1 id="team-stats" class="team-info-data-tittle">Data</h1>
-                                                    <div class="grid grid-cols-2 gap-4 pt-4 pb-4 pl-4 text-left">
-                                                        <h3 class="font-bold">Position</h3><p class="text-justify">${showedInfo.position}</p>
-                                                        <h3 class="font-bold">Kesan</h3><p class="text-justify">${showedInfo.kesan}</p>
-                                                        <h3 class="font-bold">Pesan</h3><p class="text-justify">${showedInfo.pesan}</p>
-                                                    </div>
-                                                </div>
-                                            <img id="team-image" src="${showedInfo.team_image}" alt="${showedInfo.nama}" class="team-info-image">
+                                        <div id="team-container" class="">
+                                            <button id="close-team-info" onclick=teamClose() class="team-info-close">
+                                                <img src="asset/icons/close-button.png" alt="close" class="team-info-close-img ">
+                                            </button>
+                                            <h1 id="team-name" class="team-info-data-tittle">${showedInfo.nama}</h1>
+                                            <div class="team-grid-img-desc">
+                                                <img id="team-image" src="${showedInfo.team_image}" alt="${showedInfo.nama}" class="team-info-image">
+                                                <p id="team-description" class="team-info-desc">${showedInfo.desc}</p>    
+                                            </div>
+                                            <h1 id="team-stats" class="team-info-data-tittle">Personal Information</h1>
+                                        </div>
+                                        <div class="team-info-data-grid">
+                                            <h3 class="team-info-data-trope">Position</h3><p class="team-info-p">${showedInfo.position}</p>
+                                            <h3 class="team-info-data-trope">Kesan</h3><p class="team-info-p">${showedInfo.kesan}</p>
+                                            <h3 class="team-info-data-trope">Pesan</h3><p class="team-info-p">${showedInfo.pesan}</p>
                                         </div>
                                     </div>
                                 </main>
@@ -258,7 +257,7 @@
             }else{
                 teamClose()
                 teamCard.innerHTML = filterStatus.map((team) =>`
-                    <button id="${team.id}" onclick=teamShow("${team.id}") class="">
+                    <button id="${team.id}" onclick=teamShow("${team.id}") class="cursor-pointer">
                         <h1 class="font-bold text-center">${team.nama}</h1>
                         <img src="${team.team_card}" alt="${team.nama}" 
                         class="team-card-img">

@@ -1,6 +1,25 @@
 @import "tailwindcss";
 
-body{
+p{
+font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+h1{
+font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+h3{
+font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+a{
 font-family: "Comfortaa", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
@@ -9,13 +28,13 @@ font-family: "Comfortaa", sans-serif;
 /* navbar and resize*/
 
 .navbar-container  {
-    @apply space-y-4 pt-4 pl-2 pr-2 fixed top-0 z-50 justify-center;
+    @apply pt-4 pl-2 pr-2 fixed top-0 z-50 justify-center;
 }
 .navbar-grid {
     @apply grid grid-cols-5 gap-2;
 }
 .navbar-button{
-    @apply p-[3] text-sm/7 justify-center text-center rounded-full font-bold inline-block cursor-pointer transition-colors duration-200 bg-[#5D3365] text-white shadow-md hover:bg-[#E4D9FF] hover:text-[#4B30C3];
+    @apply text-sm justify-center text-center rounded-full inline-block cursor-pointer transition-colors duration-200 bg-[#5D3365] text-white shadow-md p-2;
 }
 
 
@@ -122,14 +141,14 @@ font-family: "Comfortaa", sans-serif;
     @apply flex space-x-2 justify-center items-center flex flex-wrap;
 }
 .talent-border{
-    @apply justify-center border border-black p-3 hover:bg-indigo-950 hover:text-white duration-300 w-auto;
+    @apply cursor-pointer justify-center border border-black p-3 hover:bg-indigo-950 hover:text-white duration-300 w-auto;
 }
 @media(min-width:768px){
     .talent-filter{
         @apply flex space-x-2 justify-center items-center flex flex-wrap ;
     }
     .talent-border{
-        @apply justify-center border border-black p-3 hover:bg-indigo-950 hover:text-white duration-300 w-[6vw];
+        @apply cursor-pointer justify-center border border-black p-3 hover:bg-indigo-950 hover:text-white duration-300 w-[6vw];
     }
 }
 @media(min-width:1024px){
@@ -137,7 +156,7 @@ font-family: "Comfortaa", sans-serif;
         @apply flex space-x-2 gap-2 justify-center items-center flex flex-wrap ;
     }
     .talent-border{
-        @apply justify-center border border-black p-3 hover:bg-indigo-950 hover:text-white duration-300 w-[6vw];
+        @apply cursor-pointer justify-center border border-black p-3 hover:bg-indigo-950 hover:text-white duration-300 w-[6vw];
     }
 }
 /* talent card */
@@ -151,7 +170,7 @@ font-family: "Comfortaa", sans-serif;
     @apply text-3xl font-bold text-center;
 }
 .talent-button-image{
-    @apply w-[45vw] h-auto p-3 saturate-80 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300;
+    @apply w-[35vw] h-auto p-3 saturate-80 hover:saturate-100 hover:rotate-[5deg] hover:scale-105 transition-transform duration-300;
 }
 @media(min-width:768px){
     .talent-card-container{
@@ -183,7 +202,9 @@ font-family: "Comfortaa", sans-serif;
     }
 }
 /* talent info */
-.talent-info-main{ @apply pt-15 place-items-center;}
+.talent-info-main{ 
+    @apply pt-15 place-items-center;
+}
 .talent-info-container{
     @apply bg-white border border-2 shadow-xl w-95/100 rounded-xl;
 }
@@ -225,7 +246,9 @@ font-family: "Comfortaa", sans-serif;
 }
 
 @media(min-width:768px){
-    .talent-info-main{ @apply pt-15 place-items-center;}
+    .talent-info-main{ 
+        @apply pt-15 place-items-center;
+    }
     .talent-info-container{
         @apply bg-white border border-2 shadow-xl w-95/100 rounded-xl;
     }
@@ -395,7 +418,7 @@ font-family: "Comfortaa", sans-serif;
     @apply  font-bold text-center text-6xl p-8;
 }
 .team-grid{
-    @apply grid grid-cols-2 gap-2 justify-center items-center flex flex-wrap ;
+    @apply grid grid-cols-2 gap-2 justify-center items-center place-self-center ;
 }
 @media(min-width:768px){
     .team-div{
@@ -405,7 +428,7 @@ font-family: "Comfortaa", sans-serif;
         @apply  font-bold text-center text-6xl p-8;
     }
     .team-grid{
-        @apply grid grid-cols-4 gap-2 justify-center items-center flex flex-wrap ;
+        @apply grid grid-cols-4 gap-2 justify-center items-center place-self-center;
     }
 }
 @media(min-width:1024px){
@@ -416,22 +439,22 @@ font-family: "Comfortaa", sans-serif;
         @apply text-3xl font-bold text-center text-6xl p-8;
     }
     .team-grid{
-        @apply grid grid-cols-4 gap-2 justify-center  ;
+        @apply grid grid-cols-4 gap-2 justify-center place-self-center;
     }
 }
 
 /* team filter */
 .team-filter-border{
-    @apply max-w-35 border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300;
+    @apply cursor-pointer max-w-35 border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300;
 }
 @media(min-width:768px){
     .team-filter-border{
-        @apply min-w-[5vw] max-w-[8vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300;
+        @apply cursor-pointer min-w-[5vw] max-w-[8vw] border border-black p-3 hover:bg-indigo-950 hover:text-white transition-colors duration-300;
     }
 }
 @media(min-width:1024px){
     .team-filter-border{
-        @apply w-auto border border-black hover:bg-indigo-950 hover:text-white transition-colors duration-300 justify-center;
+        @apply cursor-pointer w-auto border border-black hover:bg-indigo-950 hover:text-white transition-colors duration-300 justify-center;
     }
 }
 
@@ -464,10 +487,10 @@ font-family: "Comfortaa", sans-serif;
 }
 @media(min-width:1024px){
     .team-card-container{
-        @apply flex flex-wrap justify-center gap-4 pt-4;
+        @apply pt-4;
     }
     .team-card-container-grid{
-        @apply grid grid-cols-5 gap-8;
+        @apply grid grid-cols-5 gap-8 justify-center place-self-center;
     }
     .team-card-h1{ 
         @apply font-bold text-center;
@@ -481,86 +504,104 @@ font-family: "Comfortaa", sans-serif;
 .team-info-container{
     @apply shadow-2xl border border-black border-2 rounded-xl;
 }
-.team-info-grid{
-    @apply grid grid-cols-2 gap-4 items-center w-3/4 mx-auto ;
-}
 .team-info-close{
-    @apply mr-105;
+    @apply pt-4 pl-4; 
 }
 .team-info-close-img{
-   @apply w-7 h-auto hover:scale-105;
+   @apply w-7 h-auto hover:scale-105 ;
 }
 .team-info-name{
-    @apply text-4xl font-bold p-4 text-left ;
+    @apply text-4xl font-bold text-left ;
 }
 .team-info-desc{
-    @apply text-black text-justify p-4;
+    @apply text-black text-justify p-4 order-2;
 }
 .team-info-data-tittle{
-    @apply text-2xl font-bold p-4;
+    @apply text-2xl font-bold p-4 text-center;
 }
 .team-info-data-grid{
-    @apply grid grid-cols-2 gap-4 pt-4 pb-4 pl-4 text-left;
+    @apply grid grid-cols-3 gap-4 pt-4 pb-4 pl-4 text-left;
 }
 .team-info-image{
-    @apply max-w-150 max-h-200 absolute ml-120 place-self-start pt-8;
+    @apply max-w-80 max-h-100 pt-2 p-2 place-self-center order-1;
+}
+.team-info-p{
+    @apply text-justify w-4/5 col-span-2;
+}
+.team-grid-img-desc{
+    @apply grid grid-cols-1;
+}
+.team-info-data-trope{
+    @apply font-bold place-items-center;
 }
 @media(min-width:768px){
     .team-info-container{
         @apply shadow-2xl border border-black border-2 rounded-xl;
     }
-    .team-info-grid{
-        @apply grid grid-cols-2 gap-4 items-center w-3/4 mx-auto ;
-    }
     .team-info-close{
-        @apply mr-105;
+        @apply pt-4 pl-4; 
     }
     .team-info-close-img{
-    @apply w-7 h-auto hover:scale-105;
+        @apply w-7 h-auto hover:scale-105;
     }
     .team-info-name{
         @apply text-4xl font-bold p-4 text-left ;
     }
     .team-info-desc{
-        @apply text-black text-justify p-4;
+        @apply text-black text-justify p-4 order-1 col-span-2;
     }
     .team-info-data-tittle{
-        @apply text-2xl font-bold p-4;
+        @apply text-2xl font-bold p-4 text-center;
     }
     .team-info-data-grid{
-        @apply grid grid-cols-2 gap-4 pt-4 pb-4 pl-4 text-left;
+        @apply grid grid-cols-3 gap-4 pt-4 pb-4 pl-4 text-left;
     }
     .team-info-image{
-        @apply max-w-150 max-h-200 absolute ml-120 place-self-start pt-8;
+        @apply max-w-100 max-h-100 pt-8 place-self-start order-2;
+    }
+    .team-info-p{
+        @apply text-justify w-4/5 col-span-2;
+    }
+    .team-grid-img-desc{
+        @apply  grid grid-cols-3;
+    }
+    .team-info-data-trope{
+        @apply font-bold place-items-center;
     }
 }
 @media(min-width:1024px){
-.team-info-container{
-        @apply shadow-2xl border border-black border-2 rounded-xl;
-    }
-    .team-info-grid{
-        @apply grid grid-cols-2 gap-4 items-center w-3/4 mx-auto ;
+    .team-info-container{
+        @apply shadow-2xl border border-black border-2 rounded-xl place-items-center justify-center;
     }
     .team-info-close{
-        @apply mr-105;
+        @apply pt-4 pl-4; 
     }
     .team-info-close-img{
-    @apply w-7 h-auto hover:scale-105;
+        @apply w-7 h-auto hover:scale-105;
     }
     .team-info-name{
         @apply text-4xl font-bold p-4 text-left ;
     }
     .team-info-desc{
-        @apply text-black text-justify p-4;
+        @apply text-black text-justify p-4 col-span-2 order-1;
     }
     .team-info-data-tittle{
-        @apply text-2xl font-bold p-4;
+        @apply text-2xl font-bold p-4 text-center;
     }
     .team-info-data-grid{
-        @apply grid grid-cols-2 gap-4 pt-4 pb-4 pl-4 text-left;
+        @apply grid grid-cols-3 gap-4 pt-4 pb-4 pl-4 text-left w-3/4;
     }
     .team-info-image{
-        @apply max-w-150 max-h-200 absolute ml-120 place-self-start pt-8;
+        @apply max-w-150 max-h-100 pt-8 place-self-start order-2;
+    }
+    .team-info-p{
+        @apply text-justify w-4/5 col-span-2;
+    }
+    .team-grid-img-desc{
+        @apply grid grid-cols-3;
+    }
+    .team-info-data-trope{
+        @apply font-bold place-items-center;
     }
 }
 
